@@ -1,4 +1,4 @@
-export interface User {
+export interface Dish {
   id: any;
   title: string;
   category: string;

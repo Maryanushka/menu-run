@@ -8,6 +8,7 @@ import { UsersComponent } from './components/users/users.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { UserService } from './services/user.service';
 import { PostService } from './services/post.service';
+import { ApiService } from './services/api.service';
 import { PostComponent } from './components/post/post.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostFormComponent } from './components/post-form/post-form.component';
@@ -35,7 +36,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 		FormsModule,
 		HttpClientModule
   ],
-	providers: [UserService, PostService],
+	providers: [UserService, PostService, ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
