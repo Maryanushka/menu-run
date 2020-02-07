@@ -4,7 +4,7 @@ export interface Dish {
   category: string;
   price: number;
   img: string;
-  calories: string;
+  calories?: number;
   filters: String[];
   weight: number;
   rate: number;
