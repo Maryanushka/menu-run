@@ -1,4 +1,6 @@
-<div class="filters"></div>
+<div class="filters">
+
+</div>
 
 <main>
 	<section *ngFor="let cat of category[0] | keyvalue">
@@ -7,7 +9,7 @@
 			<button >
 				<i class="fa fa-chevron-right" aria-hidden="true"></i></button>
 		</header>
-		<figure *ngFor="let item of dishes" class="{{item.filters}}" >
+		<figure  *ngFor="let item of dishes" class="mix {{item.filters}}" >
 			<div *ngIf="cat.key == item.category">
 				<div *ngIf="item.options !=  undefined">
 					<a routerLink="/dishes/{{item.id}}">
@@ -18,7 +20,10 @@
 				</div>
 				<h4 class="title">{{ item.title }}</h4>
 				<p class="card-text">{{ item.consist }}</p>
-				<i data-price="item.price" class="fa fa-plus" aria-hidden="true"></i>
+				<p>{{ item.price }}</p>
+				<i class="fa fa-plus" aria-hidden="true" 
+				(click)="getItemProperty(item)" 
+				></i>
 			</div>
 		</figure>
 	</section>

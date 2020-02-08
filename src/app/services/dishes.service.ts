@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Dish } from '../models/Dishes';
+import { Dish, BasketType } from '../models/Dishes';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Category } from '../models/Category';
@@ -9,6 +9,7 @@ import { Category } from '../models/Category';
 })
 export class DishesService {
 	dishes: Dish[];
+	basket: BasketType;
 	category: any;
 	dishUrl: string = '/dishes';
 	data: Observable<any>;
@@ -183,5 +184,17 @@ export class DishesService {
 
 	addDish(dish: Dish){
 		this.dishes.unshift(dish);
+	}
+
+	addDishToLocalStorage(item: BasketType) {
+		// this.dishes.unshift(log);
+
+		console.log(item);
+		let temp  = JSON.stringify(item)
+		console.log(temp);
+		
+
+		//  add to localstorage 
+		localStorage.setItem(`${item.basketId}`, temp)
 	}
 }

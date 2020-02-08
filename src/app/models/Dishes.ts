@@ -17,4 +17,12 @@ export interface Dish {
   // hide?: boolean
 }
 
+export interface BasketType{
+  basketId: any;
+  id?: any;
+  title: string;
+  price: number;
+  count: number; 
+}
+
 //  use ? if you want to display property optionally 
