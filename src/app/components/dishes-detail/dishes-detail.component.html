@@ -1,0 +1,8 @@
+<a routerLink="/dishes" class="btn btn-light btn-sm mb-3">Back</a>
+
+<div class="card" *ngIf="dish">
+  <div class="card-body">
+    <h5 class="card-title">{{ dish.title }}</h5>
+    <p class="card-text">{{ dish.consist }}</p>
+  </div>
+</div>

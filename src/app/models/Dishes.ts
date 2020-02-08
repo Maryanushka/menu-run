@@ -17,4 +17,4 @@ export interface Dish {
   // hide?: boolean
 }
 
-//  use ? if you want to display propertie optionally 
+//  use ? if you want to display property optionally 

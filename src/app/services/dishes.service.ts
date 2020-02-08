@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Dish } from '../models/Dishes';
-// import { Category } from '../models/Category';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Category } from '../models/Category';
 
@@ -10,9 +10,9 @@ import { Category } from '../models/Category';
 export class DishesService {
 	dishes: Dish[];
 	category: any;
-	// category: Category[];
+	dishUrl: string = '/dishes';
 	data: Observable<any>;
-  constructor() { 
+	constructor(private http: HttpClient) { 
 		this.category = [
       {
 				"1": 	"Блюдо дня",
@@ -174,6 +174,12 @@ export class DishesService {
 	getcategories(): Observable<Category[]> {
 		return of(this.category);
 	}
+
+	getDishDetailUrl(id: number): Observable<Dish> {
+		// const url = `${this.dishUrl}/${id}`;
+		return  of(this.dishes[id-1]);
+	}
+
 
 	addDish(dish: Dish){
 		this.dishes.unshift(dish);
