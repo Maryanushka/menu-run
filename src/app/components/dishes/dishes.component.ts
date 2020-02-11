@@ -53,7 +53,7 @@ export class DishesComponent implements OnInit {
 
 		console.log(newDish);
 		
-		this.DishesService.addDishToLocalStorage(newDish);
+		this.DishesService.setBasketLog(newDish);
 	}
 
 }

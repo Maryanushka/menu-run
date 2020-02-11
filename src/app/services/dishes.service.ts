@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Dish, BasketType } from '../models/Dishes';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable, of, BehaviorSubject } from 'rxjs';
 import { Category } from '../models/Category';
 
 @Injectable({
@@ -13,6 +13,14 @@ export class DishesService {
 	category: any;
 	dishUrl: string = '/dishes';
 	data: Observable<any>;
+
+	private basketSource = new BehaviorSubject<BasketType>({ id: null, basketId: null, title: '', price: null, count: null });
+	selectedItem = this.basketSource.asObservable();
+	private stateSource = new BehaviorSubject<Boolean>(true);
+	stateClear = this.basketSource.asObservable();
+
+
+
 	constructor(private http: HttpClient) { 
 		this.category = [
       {
@@ -168,6 +176,13 @@ export class DishesService {
       
     
 	}
+
+	setBasketLog(basket: BasketType) {
+		this.basketSource.next(basket);
+		console.log("This item form service", this.basketSource);
+		
+	}
+
 
 	getdishes(): Observable<Dish[]> {
 		return of(this.dishes);

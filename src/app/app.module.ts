@@ -18,6 +18,7 @@ import { PostDetailComponent } from './components/post-detail/post-detail.compon
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { DishesComponent } from './components/dishes/dishes.component';
 import { DishesDetailComponent } from './components/dishes-detail/dishes-detail.component';
+import { BasketComponent } from './components/basket/basket.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { DishesDetailComponent } from './components/dishes-detail/dishes-detail.
 		NotFoundComponent,
 		DishesComponent,
 		DishesDetailComponent,
+		BasketComponent,
 		
 		
   ],
