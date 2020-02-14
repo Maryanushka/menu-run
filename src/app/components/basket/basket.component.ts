@@ -12,25 +12,39 @@ export class BasketComponent implements OnInit {
   title: string;
   price: number;
   count: number; 
-  isNew: boolean = true;
+	isNew: boolean = true;
+	basket: BasketType[];
+	itemKeys: any[];
+	items: Array<any> = [];
 
   constructor(private dishService: DishesService) { }
 
   ngOnInit() {
 
-    this.dishService.selectedItem.subscribe(basket => {
-      if (basket != null) {
-        this.basketId = basket.basketId;
-        this.id = basket.id;
-        this.title = basket.title;
-        this.price = basket.price;
-        this.count = basket.count;
-      }
+		this.getItems()
 
-      console.log("Basket component" , basket);
-      
-    })
+    // this.dishService.selectedItem.subscribe(basket => {
+		// 	if (localStorage.getItem(`${basket.basketId}`) === null) {
+		// 		this.basket = []
+		// 	}
+		// 	else {
+		// 		this.basket = JSON.parse(localStorage.getItem(`${basket.basketId}`));
+		// 	}
 
-  }
+    //   console.log("Basket component" , this.basket);\
+    // })
+
+	}
+	
+	 getItems = () => {
+		 this.itemKeys = Object.keys(localStorage);
+		 for (const i of this.itemKeys) {
+			 console.log(JSON.parse(localStorage.getItem(i)));
+			 let item = JSON.parse(localStorage.getItem(i));
+			 this.items.push(item);
+		 }
+		 console.log(this.items);
+		 
+	}
 
 }

@@ -1,1 +1,5 @@
-{{ basket }}
+<ul *ngFor="let item of items">
+	<li>{{ item.title }}</li>
+	<li>{{ item.price }}</li>
+	<li>{{ item.count }}</li>
+</ul>

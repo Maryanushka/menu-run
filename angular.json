@@ -28,15 +28,15 @@
               "src/assets"
             ],
             "styles": [
-							"src/styles.scss",
-							"node_modules/font-awesome/scss/font-awesome.scss",
-							"node_modules/bootstrap/scss/bootstrap.scss"
+              "src/styles.scss",
+              "node_modules/font-awesome/scss/font-awesome.scss",
+              "node_modules/bootstrap/scss/bootstrap.scss"
             ],
             "scripts": [
-							"node_modules/jquery/dist/jquery.min.js",
-							"node_modules/popper.js/dist/umd/popper.js",
-							"node_modules/bootstrap/dist/js/bootstrap.js"
-						]
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/popper.js/dist/umd/popper.js",
+              "node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -146,5 +146,8 @@
       }
     }
   },
-  "defaultProject": "angularapp"
+  "defaultProject": "angularapp",
+  "cli": {
+    "analytics": "622813b3-2619-4dc1-a7a6-13ed2d10fbd3"
+  }
 }

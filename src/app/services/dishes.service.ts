@@ -10,6 +10,7 @@ import { Category } from '../models/Category';
 export class DishesService {
 	dishes: Dish[];
 	basket: BasketType;
+	basketId: any;
 	category: any;
 	dishUrl: string = '/dishes';
 	data: Observable<any>;
@@ -179,7 +180,32 @@ export class DishesService {
 
 	setBasketLog(basket: BasketType) {
 		this.basketSource.next(basket);
-		console.log("This item form service", this.basketSource);
+		// this.basketId = this.basket.basketId; 
+		localStorage.setItem(`${this.basketSource.value.basketId}`, JSON.stringify(basket))
+		console.log("setBasketLog", this.basketSource);
+		// console.log();
+		
+		
+	}
+	updateBasketLog(basket: BasketType) {
+		this.basketSource.next(basket);
+		// this.basketId = this.basket.basketId; 
+		localStorage.setItem(`${this.basketSource.value.basketId}`, JSON.stringify(basket))
+		console.log("updateBasketLog", this.basketSource);
+		// console.log();
+		
+		
+	}
+	getBasketLog(basketid) {
+		
+		// this.basketId = this.basket.basketId; 
+		console.log(basketid);
+		
+		console.log("getBasketLog", localStorage.getItem(`${basketid}`));
+		return JSON.parse(localStorage.getItem(`${basketid}`));
+		
+		// console.log();
+		
 		
 	}
 

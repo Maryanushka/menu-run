@@ -40,20 +40,27 @@ export class DishesComponent implements OnInit {
 	}
 	
 	getItemProperty(item: BasketType){
-		// console.log(basket);
-		let uniqueId = this.generateId();
+		console.log(item);
+		let getLocalStorageItemId = this.DishesService.getBasketLog(item.id);
 
-		let newDish = {
-			basketId: uniqueId,
-			itemid: item.id,
-			title: item.title,
-			price: item.price,
-			count: 1
+		console.log(getLocalStorageItemId);
+
+		if (item.id = getLocalStorageItemId){
+			let newDish = {
+				basketId: item.id,
+				itemid: item.id,
+				title: item.title,
+				price: item.price,
+				count: 1
+			}
 		}
-
-		console.log(newDish);
 		
-		this.DishesService.setBasketLog(newDish);
+
+
+
+		// console.log(newDish);
+		
+		// this.DishesService.setBasketLog(newDish);
 	}
 
 }
