@@ -20,7 +20,7 @@ export class UsersComponent implements OnInit {
 	loaded: boolean = false;
 	enableAdd: boolean = false;
 	showUserForm: boolean = false;
-	@ViewChild('userForm', { static: false }) form: any;
+	@ViewChild('userForm') form: any;
 
   constructor(private UserService: UserService) { 
 
