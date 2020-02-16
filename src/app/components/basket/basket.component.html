@@ -1,5 +1,19 @@
-<ul *ngFor="let item of items">
-	<li>{{ item.title }}</li>
-	<li>{{ item.price }}</li>
-	<li>{{ item.count }}</li>
-</ul>
+
+
+<main>
+	<div class="basket-wrapper" *ngFor=" let item of items">
+		<div class="basket-item row">
+			<div class="image col-4"><img class="img-responsive" src="{{ item.img }}" alt=""></div>
+			<div class="body col-5">
+				<h6>
+					{{ item.title }}
+				</h6>
+				
+			</div>
+			<div class="nums col-3">
+				<p>{{ item.price }} uah</p>
+				<p>{{ item.count }}</p>
+			</div>
+		</div>
+	</div>
+</main>

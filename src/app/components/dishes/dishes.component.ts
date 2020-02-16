@@ -16,6 +16,7 @@ export class DishesComponent implements OnInit {
 	itemid: any;
 	price: number;
 	title: string;
+	img: string;
 	count: number = 0;
 
   constructor(private DishesService: DishesService) { }
@@ -32,35 +33,41 @@ export class DishesComponent implements OnInit {
 
 	}
 
-	generateId() {
-		return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-			var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-			return v.toString(16);
-		});
-	}
+	// generateId() {
+	// 	return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+	// 		var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+	// 		return v.toString(16);
+	// 	});
+	// }
 	
-	getItemProperty(item: BasketType){
-		console.log(item);
+	addToBasket(item: BasketType){
 		let getLocalStorageItemId = this.DishesService.getBasketLog(item.id);
 
-		console.log(getLocalStorageItemId);
+		if (getLocalStorageItemId != null && item.id == getLocalStorageItemId.basketId){
+			let arr = this.DishesService.getBasketLog(item.id);
+			console.log(arr);
 
-		if (item.id = getLocalStorageItemId){
+			arr.count += 1;
+			arr.price += arr.price;
+
+			console.log(arr);
+			this.DishesService.updateBasketLog(arr);
+			
+		}
+		else {
 			let newDish = {
 				basketId: item.id,
 				itemid: item.id,
 				title: item.title,
 				price: item.price,
+				img: item.img,
 				count: 1
 			}
+
+			this.DishesService.addToLocalStorage(newDish);
 		}
 		
 
-
-
-		// console.log(newDish);
-		
-		// this.DishesService.setBasketLog(newDish);
 	}
 
 }

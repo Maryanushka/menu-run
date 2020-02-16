@@ -14,15 +14,17 @@
 				<div *ngIf="item.options !=  undefined">
 					<a routerLink="/dishes/{{item.id}}">
 						<h4 class="title">{{ item.title }}</h4>
+						<img class="img-responsive" src="{{ item.img }}" alt="">
 						<p class="card-text">{{ item.consist }}</p>
 						<i data-price="item.price" class="fa fa-plus" aria-hidden="true"></i>
 					</a>
 				</div>
 				<h4 class="title">{{ item.title }}</h4>
+				<img class="img-responsive" src="{{ item.img }}" alt="">
 				<p class="card-text">{{ item.consist }}</p>
 				<p>{{ item.price }}</p>
 				<i class="fa fa-plus" aria-hidden="true" 
-				(click)="getItemProperty(item)" 
+				(click)="addToBasket(item)" 
 				></i>
 			</div>
 		</figure>

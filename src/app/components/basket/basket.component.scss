@@ -1,0 +1,29 @@
+.img-responsive{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+.nums{
+  padding-top: 3px;
+  padding-bottom: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  p {
+    justify-content: flex-end;
+  }
+}
+.basket-item{
+  margin: 10px 0;
+}
+
+main * p , a , h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  display: inline-flex;
+}
+
+
