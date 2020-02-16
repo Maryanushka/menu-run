@@ -1,18 +1,28 @@
 
 
 <main>
-	<div class="basket-wrapper" *ngFor=" let item of items">
-		<div class="basket-item row">
-			<div class="image col-4"><img class="img-responsive" src="{{ item.img }}" alt=""></div>
-			<div class="body col-5">
-				<h6>
-					{{ item.title }}
-				</h6>
+	<div class="basket-wrapper container">
+		<div class="basket-item"  *ngFor=" let item of items"  (click)="item.status=!item.status" [ngClass]="item.status ? 'open' : 'closed'">
+			<div class="basket-item-wrapper row">
+				<div class="image col-4"><img class="img-responsive" src="{{ item.img }}" alt=""></div>
+				<div class="body col-5">
+					<h6>
+						{{ item.title }}
+					</h6>
 				
-			</div>
-			<div class="nums col-3">
-				<p>{{ item.price }} uah</p>
-				<p>{{ item.count }}</p>
+				</div>
+				<div class="nums col-3">
+					<p>{{ item.price }} uah</p>
+					<p>{{ item.count }}</p>
+				</div>
+				<div class="controls">
+					<span class="minus">
+						<i class="fa fa-minus" aria-hidden="true"></i>
+					</span>
+					<span class="plus">
+						<i class="fa fa-plus" aria-hidden="true"></i>
+					</span>
+				</div>
 			</div>
 		</div>
 	</div>
