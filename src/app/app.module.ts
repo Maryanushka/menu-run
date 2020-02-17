@@ -19,6 +19,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { DishesComponent } from './components/dishes/dishes.component';
 import { DishesDetailComponent } from './components/dishes-detail/dishes-detail.component';
 import { BasketComponent } from './components/basket/basket.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { BasketComponent } from './components/basket/basket.component';
 		DishesComponent,
 		DishesDetailComponent,
 		BasketComponent,
+		FilterPipe,
 		
 		
   ],

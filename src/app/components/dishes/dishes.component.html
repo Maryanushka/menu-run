@@ -1,32 +1,58 @@
-<div class="filters">
+<div class="filters" > 
+	<div class="icon" (click)="statusFIlter=!statusFIlter" [ngClass]="statusFIlter ? 'open' : 'hide'">
+		<div class="icon-wrapper">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+	<ul >
+		<li *ngFor="let filter of filters[0] | keyvalue" 
+		(click)="filter.selectedFilter = !filter.selectedFilter; onFilterChange(filter);" 
+
+		[ngClass]="filter.selectedFilter ? 'selected' : ''"
+		 attr.data-filter=".{{ filter.value }}">#{{ filter.key }} </li>
+	</ul>
 
 </div>
 
 <main>
+	<div *ngFor="let item of dishes | filter:{item: filterText}">
+		{{ item.title}}
+	</div>
 	<section *ngFor="let cat of category[0] | keyvalue">
-		<header (click)="status=!status" [ngClass]="status ? 'success' : 'danger'">
-			{{cat.value}}
-			<button >
-				<i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+		<header (click)="cat.status=!cat.status" [ngClass]="cat.status ? 'column' : 'line'">
+			<h1>{{cat.value}}</h1>
+			<i class="fa "  [ngClass]="status ? 'fa-chevron-down' : 'fa-chevron-right'" aria-hidden="true"></i>
 		</header>
-		<figure  *ngFor="let item of dishes" class="mix {{item.filters}}" >
-			<div *ngIf="cat.key == item.category">
-				<div *ngIf="item.options !=  undefined">
-					<a routerLink="/dishes/{{item.id}}">
-						<h4 class="title">{{ item.title }}</h4>
-						<img class="img-responsive" src="{{ item.img }}" alt="">
+		<div class="wrapper">
+			
+			<div class="item-wrapper" *ngFor="let item of dishes">
+				
+				<figure *ngIf="cat.key === item.category" attr.data-filteritem="{{item.filters}}">
+					<div *ngIf="item.options !=  undefined">
+						<a routerLink="/dishes/{{item.id}}">
+							<h4 class="title">{{ item.title }}</h4>
+							<img class="img-responsive" src="{{ item.img }}" alt="">
+							<p class="card-text">{{ item.consist }}</p>
+							<i data-price="item.price" class="fa fa-plus" aria-hidden="true"></i>
+						</a>
+					</div>
+					<img class="img-responsive" src="{{ item.img }}" alt="">
+					<div class="item-container">
+						<h6 class="title">{{ item.title }}</h6>
+						
 						<p class="card-text">{{ item.consist }}</p>
-						<i data-price="item.price" class="fa fa-plus" aria-hidden="true"></i>
-					</a>
-				</div>
-				<h4 class="title">{{ item.title }}</h4>
-				<img class="img-responsive" src="{{ item.img }}" alt="">
-				<p class="card-text">{{ item.consist }}</p>
-				<p>{{ item.price }}</p>
-				<i class="fa fa-plus" aria-hidden="true" 
-				(click)="addToBasket(item)" 
-				></i>
+						<p class="price">{{ item.price }} uah</p>
+						<i class="fa fa-plus" aria-hidden="true" (click)="addToBasket(item)"></i>
+					</div>
+				</figure>
+
 			</div>
-		</figure>
+				
+		</div>
+
 	</section>
-</main>
+
+
+</main>	

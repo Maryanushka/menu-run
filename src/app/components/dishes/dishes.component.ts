@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DishesService } from '../../services/dishes.service';
 import { Dish, BasketType } from '../../models/Dishes';
+import mixitup from 'mixitup';
 
 @Component({
   selector: 'app-dishes',
@@ -12,14 +13,26 @@ export class DishesComponent implements OnInit {
 	dishes: Dish[];
 	basket: BasketType;
 	category: any;
+	filters: any;
 	basketId: any;
 	itemid: any;
+
+	filterText: string;
 	price: number;
+	statusFIlter: boolean = false;
+	selectedFilter: boolean = false;
 	title: string;
+	status: boolean;
 	img: string;
 	count: number = 0;
+	private toggle: boolean = false;
 
-  constructor(private DishesService: DishesService) { }
+  constructor(private DishesService: DishesService) {
+
+
+			// this.selectedFilter = this.filters;
+		
+	 }
 
   ngOnInit() {
 		this.DishesService.getdishes().subscribe(dishes => {
@@ -30,15 +43,20 @@ export class DishesComponent implements OnInit {
 			this.category = category;
 			this.loaded = true;
 		});
+		this.DishesService.getFilters().subscribe(filters => {
+			this.filters = filters;
+			this.loaded = true;
+		});
+
+
 
 	}
 
-	// generateId() {
-	// 	return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-	// 		var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-	// 		return v.toString(16);
-	// 	});
-	// }
+
+	onFilterChange(e){
+		// console.log(e);
+		this.filterText = e;
+	}
 	
 	addToBasket(item: BasketType){
 		let getLocalStorageItemId = this.DishesService.getBasketLog(item.id);
@@ -61,6 +79,7 @@ export class DishesComponent implements OnInit {
 				title: item.title,
 				price: item.price,
 				img: item.img,
+				status: true,
 				count: 1
 			}
 
