@@ -6,7 +6,7 @@ export interface Dish {
   img: string;
   calories?: number;
   filters: String[];
-  weight: number;
+  weight: string;
   rate: number;
   description?: string;
   bonusOption?: string;
