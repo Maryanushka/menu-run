@@ -17,9 +17,9 @@
 </div>
 
 <main>
-	<div *ngFor="let item of dishes | filter:{item: filterText}">
+	<!-- <div *ngFor="let item of dishes | filter:{item: filterText}">
 		{{ item.title}}
-	</div>
+	</div> -->
 	<section *ngFor="let cat of category[0] | keyvalue">
 		<header (click)="cat.status=!cat.status" [ngClass]="cat.status ? 'column' : 'line'">
 			<h1>{{cat.value}}</h1>
@@ -54,5 +54,5 @@
 
 	</section>
 
-
+	<button class="basket_btn {{ basketClass }}" [routerLink]="['/basket']">Корзина	<span>{{ balance }}</span> uah</button>
 </main>	

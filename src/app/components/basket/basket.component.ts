@@ -16,6 +16,7 @@ export class BasketComponent implements OnInit {
 	basket: BasketType[];
 	itemKeys: any[];
 	items: Array<any> = [];
+	PageTitle = "корзина";
 
   constructor(private dishService: DishesService) { }
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DishesService } from '../../services/dishes.service';
 import { Dish, BasketType } from '../../models/Dishes';
-import mixitup from 'mixitup';
+// import mixitup from 'mixitup';
 
 @Component({
   selector: 'app-dishes',
@@ -16,7 +16,7 @@ export class DishesComponent implements OnInit {
 	filters: any;
 	basketId: any;
 	itemid: any;
-
+	balance: number;
 	filterText: string;
 	price: number;
 	statusFIlter: boolean = false;
@@ -24,6 +24,7 @@ export class DishesComponent implements OnInit {
 	title: string;
 	status: boolean;
 	img: string;
+	basketClass: string;
 	count: number = 0;
 	private toggle: boolean = false;
 
@@ -70,7 +71,7 @@ export class DishesComponent implements OnInit {
 
 			console.log(arr);
 			this.DishesService.updateBasketLog(arr);
-			
+			return this.balance = arr.price, this.basketClass = "open"; 
 		}
 		else {
 			let newDish = {
@@ -84,6 +85,9 @@ export class DishesComponent implements OnInit {
 			}
 
 			this.DishesService.addToLocalStorage(newDish);
+			console.log(newDish.price);
+			
+			return this.balance = newDish.price, this.basketClass = "open" ;
 		}
 		
 

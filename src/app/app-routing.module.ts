@@ -10,7 +10,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { BasketComponent } from './components/basket/basket.component';
 
 const routes: Routes = [
-	{ path: '', component: HomeComponent},
+	{ path: '', component: DishesComponent},
 	{ path: 'users', component: UsersComponent},
 	{ path: 'posts', component: PostComponent},
 	{ path: 'basket', component: BasketComponent},
