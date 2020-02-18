@@ -23,7 +23,7 @@
 	<section *ngFor="let cat of category[0] | keyvalue">
 		<header (click)="cat.status=!cat.status" [ngClass]="cat.status ? 'column' : 'line'">
 			<h1>{{cat.value}}</h1>
-			<i class="fa "  [ngClass]="status ? 'fa-chevron-down' : 'fa-chevron-right'" aria-hidden="true"></i>
+			<i class="fa "  [ngClass]="cat.status ? 'fa-chevron-down' : 'fa-chevron-right'" aria-hidden="true"></i>
 		</header>
 		<div class="wrapper">
 			

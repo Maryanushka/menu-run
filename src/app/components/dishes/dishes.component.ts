@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DishesService } from '../../services/dishes.service';
 import { Dish, BasketType } from '../../models/Dishes';
+// import { AnyMxRecord } from 'dns';
 // import mixitup from 'mixitup';
 
 @Component({
@@ -26,6 +27,8 @@ export class DishesComponent implements OnInit {
 	img: string;
 	basketClass: string;
 	count: number = 0;
+	basketPrice: any;
+	private balanceTemp: number = 0;
 	private toggle: boolean = false;
 
   constructor(private DishesService: DishesService) {
@@ -48,16 +51,28 @@ export class DishesComponent implements OnInit {
 			this.filters = filters;
 			this.loaded = true;
 		});
+	
+		this.getBasketPrice();
+	}
 
+	getBasketPrice() {
+		this.basketPrice = this.DishesService.getAllLocalStorage();
 
+		if (this.basketPrice.length !== 0 ){
+			for (const key in this.basketPrice) {
+				if (this.basketPrice.hasOwnProperty(key)) {
+					const element = JSON.parse(this.basketPrice[key]);
+					this.balanceTemp += element.price;
+				}
+			}
 
+			return this.balance = this.balanceTemp, this.basketClass = "open";
+		}
+		
+		
 	}
 
 
-	onFilterChange(e){
-		// console.log(e);
-		this.filterText = e;
-	}
 	
 	addToBasket(item: BasketType){
 		let getLocalStorageItemId = this.DishesService.getBasketLog(item.id);

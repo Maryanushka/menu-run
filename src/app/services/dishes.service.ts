@@ -18,8 +18,8 @@ export class DishesService {
 
 	private basketSource = new BehaviorSubject<BasketType>({ id: null, basketId: null, title: '', price: null, count: null, img: '' });
 	selectedItem = this.basketSource.asObservable();
-	private stateSource = new BehaviorSubject<Boolean>(true);
-	stateClear = this.basketSource.asObservable();
+	private stateSource = new BehaviorSubject<any>({ null: null});
+	stateClear = this.stateSource.asObservable();
 
 
 
@@ -1224,6 +1224,13 @@ export class DishesService {
 		localStorage.setItem(`${this.basketSource.value.basketId}`, JSON.stringify(basket))
 		console.log("addToLocalStorage", this.basketSource);
 	}
+	removeFromLocalStorage(basket: BasketType): Observable<BasketType> {
+		this.stateSource.next(basket);
+		console.log(this.stateSource);
+		
+		localStorage.removeItem(`${this.stateSource}`)
+		return this.stateSource;
+	}
 	updateBasketLog(basket: BasketType) {
 		this.basketSource.next(basket);
 		localStorage.setItem(`${this.basketSource.value.basketId}`, JSON.stringify(basket))
@@ -1233,8 +1240,10 @@ export class DishesService {
 		// console.log("getBasketLog", JSON.parse(localStorage.getItem(`${basketid}`)));
 		return JSON.parse(localStorage.getItem(`${basketid}`));
 	}
-
-
+	getAllLocalStorage(){
+		// console.log("getBasketLog", JSON.parse(localStorage.getItem(`${basketid}`)));
+		return localStorage;
+	}
 	getdishes(): Observable<Dish[]> {
 		return of(this.dishes);
 	}
