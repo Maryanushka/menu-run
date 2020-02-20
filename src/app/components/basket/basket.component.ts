@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Dish, BasketType } from '../../models/Dishes';
 import { DishesService } from '../../services/dishes.service';
+import { BalanceService } from '../../services/balance.service';
 @Component({
   selector: 'app-basket',
   templateUrl: './basket.component.html',
@@ -11,6 +12,7 @@ export class BasketComponent implements OnInit {
   id?: any;
 	title: string;
 	originalArr: Dish[];
+	balance: number;
   price: number;
   count: number; 
 	isNew: boolean = true;
@@ -20,88 +22,86 @@ export class BasketComponent implements OnInit {
 	PageTitle = "корзина";
 	status: boolean = false;
 
-  constructor(private DishesService: DishesService) { }
+	constructor(private DishesService: DishesService,
+		private BalanceService: BalanceService) { }
 
   ngOnInit() {
 
 		this.getItems();
 
-		this.DishesService.getAllLocalStorage().subscribe( el => {
-			console.log(el);
-			
-			// this.items = el
-		})
+		this.DishesService.getdishes().subscribe(dishes => {
+			this.originalArr = dishes;
+		});
 
+		this.getBalance();
+	}
+
+	getBalance() {
+		let b = this.BalanceService.getbalance();
+		if (b > 0) {
+			return this.balance = b;
+		}
+		else return this.balance = 0;
 	}
 	
 	 getItems = () => {
 		 this.itemKeys = Object.keys(localStorage);
 		 for (const i of this.itemKeys) {
-			 console.log(JSON.parse(localStorage.getItem(i)));
-			 let item = JSON.parse(localStorage.getItem(i));
-			 item.status = false;
-			 this.items.push(item);
+			 if(i !== "balance"){
+				 let item = JSON.parse(localStorage.getItem(i));
+				 item.status = false;
+				 this.items.push(item);
+			 }
 		 }
-		 console.log(this.items);
-		 
 	}
 
 	increase(item: BasketType){
-		console.log(item);
-		let getLocalStorageItemId = this.DishesService.getBasketLog(item.basketId);
-
-		console.log(getLocalStorageItemId);
+		// console.log(item);
 		
-		if (getLocalStorageItemId != null && item.basketId == getLocalStorageItemId.basketId) {
-			let arr = this.DishesService.getBasketLog(item.basketId);
-			this.DishesService.getdishes().subscribe(dishes => {
-				this.originalArr = dishes;
-			});
-			console.log(arr);
-			console.log();
-			this.originalArr.forEach(element => {
-				if (element.id == item.basketId)
-					return this.price = element.price;
-				
-			});
-			arr.count += 1;
-			arr.price += this.price;
+		let getLocalStorageItem = this.DishesService.getBasketLog(item.basketId);
+		let currentBalance = this.BalanceService.getbalance();
+		console.log(currentBalance, getLocalStorageItem, this.originalArr[item.basketId].price,  item.basketId, getLocalStorageItem.basketId, this.originalArr);
+		if (getLocalStorageItem != null && item.basketId == getLocalStorageItem.basketId) {
+			getLocalStorageItem.count += 1;
+			getLocalStorageItem.price += this.originalArr[item.basketId-1].price;
+			currentBalance += this.originalArr[item.basketId-1].price;
+			this.BalanceService.updatebalance(currentBalance);
+			this.DishesService.updateBasketLog(getLocalStorageItem);
 
-			console.log(arr);
-			this.DishesService.updateBasketLog(arr);
-			return item.price = arr.price, item.count = arr.count;
+
+			return 	this.balance = this.BalanceService.getbalance(),
+							item.price = getLocalStorageItem.price, 
+							item.count = getLocalStorageItem.count;
 		}
 	}
 
 	decrease(item: BasketType){
-		console.log(item);
-		let getLocalStorageItemId = this.DishesService.getBasketLog(item.basketId);
+		let getLocalStorageItem = this.DishesService.getBasketLog(item.basketId);
+		let currentBalance = this.BalanceService.getbalance();
 
-		console.log(getLocalStorageItemId);
+		if (getLocalStorageItem != null && item.basketId == getLocalStorageItem.basketId) {
+			console.log(currentBalance);
+			getLocalStorageItem.count -= 1;
+			getLocalStorageItem.price -= this.originalArr[item.basketId-1].price;
+			currentBalance -= this.originalArr[item.basketId-1].price;
+			this.BalanceService.updatebalance(currentBalance);
+			this.DishesService.updateBasketLog(getLocalStorageItem)
+			console.log(currentBalance);
+			
 
-		if (getLocalStorageItemId != null && item.basketId == getLocalStorageItemId.basketId) {
-			let arr = this.DishesService.getBasketLog(item.basketId);
-			this.DishesService.getdishes().subscribe(dishes => {
-				this.originalArr = dishes;
-			});
-			console.log(arr);
-			console.log();
-			this.originalArr.forEach(element => {
-				if (element.id == item.basketId)
-					return this.price = element.price;
+			if(getLocalStorageItem.count == 0) {
 
-			});
-			arr.count -= 1;
-			arr.price -= this.price;
-
-			if(arr.count == 0) {
-				console.log(item.basketId);
-				
-				this.DishesService.removeFromLocalStorage(item.basketId)
+				this.DishesService.deleteLog(item.basketId);
+				this.items = this.items.filter(el => {
+					return el.basketId !== item.basketId
+				})
+				console.log(currentBalance);
+				return this.items, this.balance = this.BalanceService.getbalance();
 			}
 			else{
-				this.DishesService.updateBasketLog(arr);
-				return item.price = arr.price, item.count = arr.count;
+				return 	this.balance = this.BalanceService.getbalance(),
+								item.price = getLocalStorageItem.price,
+								item.count = getLocalStorageItem.count;
 			}
 
 		}

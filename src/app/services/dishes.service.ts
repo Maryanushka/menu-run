@@ -10,6 +10,7 @@ import { Category } from '../models/Category';
 export class DishesService {
 	dishes: Dish[];
 	basket: BasketType;
+	basketArr: BasketType[];
 	basketId: any;
 	category: any;
 	filter: any;
@@ -60,7 +61,6 @@ export class DishesService {
 				'Шоти':"shot",	
       }
     ];
-
 		this.dishes = [
 			{
         id: 1,
@@ -383,7 +383,7 @@ export class DishesService {
 				rate: 3,
       },
 			{
-        id: 30,
+        id: 31,
 				title: "НАЧОС ІЗ СИРНИМ ДІПОМ",
         category: "3",
 				price: 49,
@@ -393,7 +393,7 @@ export class DishesService {
 				rate: 3,
       },
 			{
-        id: 31,
+        id: 32,
 				title: "КОББ САЛАТ",
         category: "4",
 				price: 159,
@@ -404,7 +404,7 @@ export class DishesService {
 				consist: "МІКС САЛАТ З КУРКОЮ ГРИЛЬ, РОКФОРОМ, КУКУРУДЗОЮ, СЕЛЕРОЮ, ОГІРКОМ, ТОМАТАМИ ЧЕРІ, ЧІПСАМИ З БЕКОНУ, ЯЙЦЕМ ТА ОЛИВКОВО-ГІРЧИЧНОЮ ЗАПРАВКОЮ"
       },
 			{
-        id: 32,
+        id: 33,
 				title: "САЛАТ З ОВОЧАМИ ТА РІКОТОЮ",
         category: "4",
 				price: 125,
@@ -415,7 +415,7 @@ export class DishesService {
 				consist: "МІКС САЛАТ З ПЕЧЕНИМИ ОВОЧАМИ, ФЕРМЕРСЬКОЮ РІКОТОЮ, СИРОМ ФЕТА, ТОМАТАМИ ЧЕРІ ТА ОЛИВКАМИ КАЛАМАТА"
       },
 			{
-        id: 33,
+        id: 34,
 				title: "ЦЕЗАР З КУРКОЮ І ЧІПСАМИ З БЕКОНУ",
         category: "4",
 				price: 145,
@@ -426,7 +426,7 @@ export class DishesService {
 				consist: "САЛАТ РОМЕН З СОУСОМ ЦЕЗАР, КУРЯЧОЮ ГРУДКОЮ, ЧЕРІ, КРУТОНАМИ, ЧІПСАМИ З БЕКОНУ, ПАРМЕЗАНОМ І ЯЙЦЕМ"
       },
 			{
-        id: 34,
+        id: 35,
 				title: "ТЕПЛИЙ САЛАТ",
         category: "4",
 				price: 135,
@@ -437,7 +437,7 @@ export class DishesService {
 				consist: "З МЕДАЛЬЙОНАМИ З КУРЯЧОЇ ПЕЧІНКИ І ЧОРНИМ КАМАМБЕРОМ"
       },
 			{
-        id: 35,
+        id: 36,
 				title: "КАЛІФОРНІЙСЬКИЙ",
         category: "4",
 				price: 159,
@@ -448,7 +448,7 @@ export class DishesService {
 				consist: "МІКС САЛАТ З СЛАБОСОЛЕНИМ АРКТИЧНИМ ГОЛЬЦЕМ, СИРОМ ФЕТА, АПЕЛЬСИНОМ, ЧЕРІ ТА КУНЖУТОМ"
       },
 			{
-        id: 36,
+        id: 37,
 				title: "БОРЩ З КОПЧЕНОЮ СВИНИНОЮ І БЕБІ ХЛІБОМ",
         category: "5",
 				price: 85,
@@ -458,7 +458,7 @@ export class DishesService {
 				rate: 3,
       },
 			{
-        id: 37,
+        id: 38,
 				title: "БОРЩ ДЕ ЛЮКС",
         category: "5",
 				price: 109,
@@ -469,7 +469,7 @@ export class DishesService {
 				consist: "ПОДАЄМО З ТЕМНИМ ХЛІБОМ, САЛОМ ШПИК, ЦИБУЛЕЮ, ЧАСНИКОМ, КОПЧЕНИМ СВИНЯЧИМ РЕБРОМ І ЧАРКОЮ ХРІНОВУХИ"
       },
 			{
-        id: 38,
+        id: 39,
 				title: "БУЛЬЙОН КУРЯЧИЙ",
         category: "5",
 				price: 59,
@@ -480,7 +480,7 @@ export class DishesService {
 				consist: "З ЛОКШИНОЮ УДОН ТА ЦИБУЛЕВИМИ КРУТОНАМИ"
       },
 			{
-        id: 39,
+        id: 40,
 				title: "ЦИБУЛЕВИЙ СУП",
         category: "5",
 				price: 89,
@@ -490,7 +490,7 @@ export class DishesService {
 				rate: 4,
       },
 			{
-        id: 40,
+        id: 41,
 				title: "ЧІЗКЕЙК",
         category: "9",
 				price: 85,
@@ -500,7 +500,7 @@ export class DishesService {
 				rate: 4,
       },
 			{
-        id: 41,
+        id: 42,
 				title: "CHIEF КЕЙК",
         category: "9",
 				price: 85,
@@ -510,7 +510,7 @@ export class DishesService {
 				rate: 4,
       },
 			{
-        id: 42,
+        id: 43,
 				title: "БРАУНІ З ВИШНЕЮ ТА МОРОЗИВОМ",
         category: "9",
 				price: 95,
@@ -520,7 +520,7 @@ export class DishesService {
 				rate: 4,
       },
 			{
-        id: 43,
+        id: 44,
 				title: "ЛИМОННИЙ ТАРТ",
         category: "9",
 				price: 89,
@@ -530,7 +530,7 @@ export class DishesService {
 				rate: 4,
       },
 			{
-        id: 44,
+        id: 45,
 				title: "СЕНДВІЧ З АРКТИЧНИМ ГОЛЬЦЕМ ТА ШПИНАТОМ",
         category: "6",
 				price: 129,
@@ -541,7 +541,7 @@ export class DishesService {
 				consist: "СОЛОДОВА БУЛОЧКА, ШПИНАТ, ЧЕРІ, ЯЙЦЕ ПАШОТ, ГОЛЕЦЬ СЛАБОСОЛЕНИЙ, СИР ФЕТА, МІКС САЛАТ, БАЛЬЗАМІЧНИЙ КРЕМ, ОЛИВКОВО-КУНЖУТНА ЗАПРАВКА ТА СОУС УНАГІ-ВАСАБІ"
       },
 			{
-        id: 45,
+        id: 46,
 				title: "ЯЄЧНЯ З БЕКОНОМ І ТОСТАМИ",
         category: "6",
 				price: 89,
@@ -551,7 +551,7 @@ export class DishesService {
 				rate: 4,
       },
 			{
-        id: 46,
+        id: 47,
 				title: "СКРЕМБЛ З ОВОЧАМИ",
         category: "6",
 				price: 75,
@@ -561,7 +561,7 @@ export class DishesService {
 				rate: 4,
       },
 			{
-        id: 47,
+        id: 48,
 				title: "СИРНИКИ",
         category: "6",
 				price: 89,
@@ -571,7 +571,7 @@ export class DishesService {
 				rate: 4,
       },
 			{
-        id: 48,
+        id: 49,
 				title: "ВІВСЯНА КАША З АРАХІСОВОЮ ПАСТОЮ, ЧЕДДЕРОМ І ЧІПСАМИ З БЕКОНУ",
         category: "6",
 				price: 69,
@@ -581,7 +581,7 @@ export class DishesService {
 				rate: 4,
       },
 			{
-        id: 49,
+        id: 50,
 				title: "ВІВСЯНА КАША З ФРУКТАМИ ТА ЯГОДАМИ",
         category: "6",
 				price: 69,
@@ -591,7 +591,7 @@ export class DishesService {
 				rate: 4,
       },
 			{
-        id: 50,
+        id: 51,
 				title: "ХАШБРАУН ЗІ СЛАБОСОЛЕНИМ ГОЛЬЦЕМ І ПАШОТ",
         category: "6",
 				price: 129,
@@ -601,7 +601,7 @@ export class DishesService {
 				rate: 4,
       },
 			{
-        id: 51,
+        id: 52,
 				title: "КРАФТ ТИЖНЯ — ПИВНИЙ ГУРМАН ЗАПИТУЙ У ОФІЦІАНТА",
         category: "11",
 				price: 42,
@@ -612,7 +612,7 @@ export class DishesService {
 				consist: "ОБЕРЕЖНО!!! ТІЛЬКИ ДЛЯ ГУРМАНІВ"
       },
 			{
-        id: 52,
+        id: 53,
 				title: "ЗОЛОТОЙ ЭЛЬ BY KUMPEL",
         category: "11",
 				price: 62 ,
@@ -622,7 +622,7 @@ export class DishesService {
 				rate: 5,
       },
 			{
-        id: 52,
+        id: 54,
 				title: "KÖLSCH BY BEER BOWL",
         category: "11",
 				price: 54 ,
@@ -632,7 +632,7 @@ export class DishesService {
 				rate: 5,
       },
 			{
-        id: 53,
+        id: 55,
 				title: "HEFEWEISS BY BEER BOWL",
         category: "11",
 				price: 62 ,
@@ -642,7 +642,7 @@ export class DishesService {
 				rate: 5,
       },
 			{
-        id: 54,
+        id: 56,
 				title: "REBREW WHEAT",
         category: "11",
 				price: 62 ,
@@ -652,7 +652,7 @@ export class DishesService {
 				rate: 5,
       },
 			{
-        id: 55,
+        id: 57,
 				title: "L.APA APA FIRST DNIPRO BREWERY",
         category: "11",
 				price: 62 ,
@@ -662,7 +662,7 @@ export class DishesService {
 				rate: 5,
       },
 			{
-        id: 56,
+        id: 58,
 				title: "KRONENBOURG BLANC",
         category: "11",
 				price: 54 ,
@@ -672,7 +672,7 @@ export class DishesService {
 				rate: 5,
       },
 			{
-        id: 57,
+        id: 59,
 				title: "ЛІСОВА ПІСНЯ BY КРАПКА КОМА",
         category: "11",
 				price: 62,
@@ -682,7 +682,7 @@ export class DishesService {
 				rate: 5,
       },
 			{
-        id: 58,
+        id: 60,
 				title: "BARBADOS IPA BY SEVEN BRIDGES",
         category: "11",
 				price: 65,
@@ -692,7 +692,7 @@ export class DishesService {
 				rate: 5,
       },
 			{
-        id: 59,
+        id: 61,
 				title: "КОМЕТА IPA BY VOLTA BREWERY",
         category: "11",
 				price: 62,
@@ -702,7 +702,7 @@ export class DishesService {
 				rate: 5,
       },
 			{
-        id: 60,
+        id: 62,
 				title: "GOLDEN ALE FIRST DNIPRO BREWERY",
         category: "11",
 				price: 62,
@@ -712,7 +712,7 @@ export class DishesService {
 				rate: 5,
       },
 			{
-        id: 61,
+        id: 63,
 				title: "VARVAR BRUT IPA",
         category: "11",
 				price: 75,
@@ -722,7 +722,7 @@ export class DishesService {
 				rate: 5,
       },
 			{
-        id: 61,
+        id: 64,
 				title: "GRIMBERGEN DOUBLE AMBREE",
         category: "11",
 				price: 79,
@@ -732,7 +732,7 @@ export class DishesService {
 				rate: 5,
       },
 			{
-        id: 62,
+        id: 65,
 				title: "STONE RIPPER",
         category: "11",
 				price: 89,
@@ -742,7 +742,7 @@ export class DishesService {
 				rate: 5,
       },
 			{
-        id: 62,
+        id: 66,
 				title: "APPS CIDER",
         category: "11",
 				price: 49,
@@ -752,7 +752,7 @@ export class DishesService {
 				rate: 5,
       },
 			{
-        id: 63,
+        id: 67,
 				title: "PILSNER FIRST DNIPRO BREWERY",
         category: "11",
 				price: 54,
@@ -762,7 +762,7 @@ export class DishesService {
 				rate: 5,
       },
 			{
-        id: 64,
+        id: 68,
 				title: "CARLSBERG",
         category: "11",
 				price: 49,
@@ -772,7 +772,7 @@ export class DishesService {
 				rate: 5,
       },
 			{
-        id: 65,
+        id: 69,
 				title: "LITOVEL CLASSIC LAGER",
         category: "11",
 				price: 69,
@@ -782,7 +782,7 @@ export class DishesService {
 				rate: 5,
       },
 			{
-        id: 65,
+        id: 70,
 				title: "LITOVEL DARK LAGER",
         category: "11",
 				price: 69,
@@ -792,7 +792,7 @@ export class DishesService {
 				rate: 5,
       },
 			{
-        id: 66,
+        id: 71,
 				title: "WARSTEINER PREMIUM VERUM",
         category: "11",
 				price: 74,
@@ -802,7 +802,7 @@ export class DishesService {
 				rate: 5,
       },
 			{
-        id: 67,
+        id: 72,
 				title: "AMERICAN STOUT BY SEVEN BRIDGES",
         category: "11",
 				price: 62,
@@ -812,7 +812,7 @@ export class DishesService {
 				rate: 5,
       },
 			{
-        id: 68,
+        id: 73,
 				title: "VARVAR MILK STOUT",
         category: "11",
 				price: 69,
@@ -822,7 +822,7 @@ export class DishesService {
 				rate: 5,
       },
 			{
-        id: 69,
+        id: 74,
 				title: "CAPTAIN SALT",
         category: "11",
 				price: 29,
@@ -832,7 +832,7 @@ export class DishesService {
 				rate: 5,
       },
 			{
-        id: 70,
+        id: 75,
 				title: "6 ВИДІВ УКРАЇНСЬКОГО КРАФТОВОГО ПИВА НА ВИБІР",
         category: "11",
 				price: 99,
@@ -842,7 +842,7 @@ export class DishesService {
 				rate: 5,
       },
 			{
-        id: 71,
+        id: 76,
 				title: "6 ВИДІВ ІНОЗЕМНОГО КРАФТОВОГО ПИВА НА ВИБІР",
         category: "11",
 				price: 129,
@@ -852,7 +852,7 @@ export class DishesService {
 				rate: 5,
       },
 			{
-        id: 72,
+        id: 77,
 				title: "MARTINI FIERO & TONIC",
         category: "12",
 				price: 155,
@@ -863,7 +863,7 @@ export class DishesService {
 				consist: "MARTINI FIERO, ТОНІК, АПЕЛЬСИН"
       },
 			{
-        id: 73,
+        id: 78,
 				title: "ITALY SPRITZ",
         category: "12",
 				price: 155,
@@ -874,7 +874,7 @@ export class DishesService {
 				consist: "MARTINI FIERO, MARTINI RISERVA BITTER, ІГРИСТЕ ВИНО БРЮТ"
       },
 			{
-        id: 74,
+        id: 79,
 				title: "CORONA CHERRY BOURBON",
         category: "12",
 				price: 155,
@@ -885,7 +885,7 @@ export class DishesService {
 				consist: "CORONA, БУРБОН, ВИШНЕВИЙ СІК ТА ВИШНЕВИЙ КОНФІТЮР"
       },
 			{
-        id: 75,
+        id: 80,
 				title: "CORONA GREEN TEA CUCUMBER",
         category: "12",
 				price: 155,
@@ -896,7 +896,7 @@ export class DishesService {
 				consist: "CORONA, ДЖИН BOMBAY SAPPHIRE, СИРОП ОГІРОК, СИРОП ЗЕЛЕНИЙ ЧАЙ, ЛИМОННИЙ ФРЕШ"
       },
 			{
-        id: 76,
+        id: 81,
 				title: "CORONA SUNSETS",
         category: "12",
 				price: 155,
@@ -907,7 +907,7 @@ export class DishesService {
 				consist: "CORONA, ДЖИН BOMBAY SAPPHIRE, СИРОП МАРАКУЙЯ, ЛИМОННИЙ ФРЕШ, АПЕЛЬСИН"
       },
 			{
-        id: 77,
+        id: 82,
 				title: "CORONA JÄGERMEISTER",
         category: "12",
 				price: 155,
@@ -918,7 +918,7 @@ export class DishesService {
 				consist: "CORONA, JÄGERMEISTER, СИРОП СМОРОДИНА, ЛИМОННИЙ ФРЕШ, ІМБИР"
       },
 			{
-        id: 78,
+        id: 83,
 				title: "PEACH SPRITZ",
         category: "12",
 				price: 129,
@@ -929,7 +929,7 @@ export class DishesService {
 				consist: "FRIZZANTE PESCO, РОМ BACARDI CARTA ORO, СИРОП ПЕРСИК, СОДОВА, ЛИМОННИЙ ФРЕШ, АПЕЛЬСИН"
       },
 			{
-        id: 79,
+        id: 84,
 				title: "SPRITZ FOR HER",
         category: "12",
 				price: 129,
@@ -940,7 +940,7 @@ export class DishesService {
 				consist: "АПЕРОЛЬ, ДЖИН BOMBAY SAPPHIRE, FRIZZANTE PESCO, СИРОП БУЗИНИ, ЛИМОННИЙ ФРЕШ, СОДОВА"
       },
 			{
-        id: 80,
+        id: 85,
 				title: "NON ALC WARSTEINER GRAPEFRUIT",
         category: "12",
 				price: 155,
@@ -951,7 +951,7 @@ export class DishesService {
 				consist: "WARSTEINER БЕЗАЛКОГОЛЬНИЙ, АПЕЛЬСИНОВИЙ СІК, СИРОП РОЖЕВИЙ ГРЕЙПФРУТ, ЛИМОННИЙ ФРЕШ"
       },
 			{
-        id: 81,
+        id: 86,
 				title: "APEROL SPRITZ",
         category: "12",
 				price: 125,
@@ -962,7 +962,7 @@ export class DishesService {
 				consist: "APEROL, LAMBRUSCO, СОДОВА, АПЕЛЬСИНОВИЙ ФРЕШ"
       },
 			{
-        id: 82,
+        id: 87,
 				title: "LAWSON’S COLA",
         category: "12",
 				price: 115,
@@ -973,7 +973,7 @@ export class DishesService {
 				consist: "WILLIAM LAWSON'S, ПЕПСІ"
       },
 			{
-        id: 83,
+        id: 88,
 				title: "RAPASKA",
         category: "12",
 				price: 119,
@@ -984,7 +984,7 @@ export class DishesService {
 				consist: "WILLIAM LAWSON'S, ПЕПСІ"
       },
 			{
-        id: 84,
+        id: 89,
 				title: "OLDFASION DE MARSEILLE",
         category: "12",
 				price: 135,
@@ -995,7 +995,7 @@ export class DishesService {
 				consist: "WILLIAM LAWSON'S, СИРОП БУЗИНА, АЛЕЛЬСИНОВИЙ БІТТЕР"
       },
 			{
-        id: 85,
+        id: 90,
 				title: "BACARDI CUBA LIBRE",
         category: "12",
 				price: 115,
@@ -1006,7 +1006,7 @@ export class DishesService {
 				consist: "BACARDI CARTA ORO, ПЕПСІ, ЛАЙМ"
       },
 			{
-        id: 86,
+        id: 91,
 				title: "MARTINI & TONIC",
         category: "12",
 				price: 115,
@@ -1017,7 +1017,7 @@ export class DishesService {
 				consist: "BACARDI CARTA ORO, ПЕПСІ, ЛАЙМ"
       },
 			{
-        id: 86,
+        id: 92,
 				title: "BACARDI MOJITO",
         category: "12",
 				price: 115,
@@ -1028,7 +1028,7 @@ export class DishesService {
 				consist: "BACARDI CARTA BLANCA, ЛАЙМ, М’ЯТА, ТРОСТНИКОВИЙ ЦУКОР, СОДОВА"
       },
 			{
-        id: 87,
+        id: 93,
 				title: "BLOODY MARY",
         category: "12",
 				price: 119,
@@ -1039,7 +1039,7 @@ export class DishesService {
 				consist: "ГОРІЛКА, СОУС ВОРЧЕСТЕР, СОУС ТАБАСКО, СІК ТОМАТНИЙ, ЛИМОННИЙ ФРЕШ, СИРОП СОЛОНА КАРАМЕЛЬ, СИРОП КОПЧЕНИЙ, СЕЛЕРА, ХРІН"
       },
 			{
-        id: 88,
+        id: 94,
 				title: "LADY KILLER",
         category: "12",
 				price: 129,
@@ -1050,7 +1050,7 @@ export class DishesService {
 				consist: "ДЖИН BOMBAY SAPPHIRE, ТРІПЛ СЕК, ПЮРЕ МАРАКУЙЯ, СИРОП МАРАКУЙЯ, АНАНАСОВИЙ СІК"
       },
 			{
-        id: 89,
+        id: 95,
 				title: "APEROL SOUR",
         category: "12",
 				price: 119,
@@ -1061,7 +1061,7 @@ export class DishesService {
 				consist: "APEROL, ЛІКЕР МАНГАЛОР, БІЛОК, ЛИМОННИЙ ФРЕШ, ЦУКРОВИЙ СИРОП"
       },
 			{
-        id: 90,
+        id: 96,
 				title: "DEWAR’S & TONIC",
         category: "12",
 				price: 115,
@@ -1072,7 +1072,7 @@ export class DishesService {
 				consist: "DEWAR'S WHITE LABEL, СИРОП БУЗИНА, ЛИМОН"
       },
 			{
-        id: 91,
+        id: 97,
 				title: "BARBARIZE",
         category: "12",
 				price: 125,
@@ -1083,7 +1083,7 @@ export class DishesService {
 				consist: "ДЖИН BOMBAY SAPPHIRE, MARTINI ROSSO, БАРБАРИСОВИЙ СИРОП, АНАНАСОВИЙ СІК"
       },
 			{
-        id: 92,
+        id: 98,
 				title: "БІЛА САНГРІЯ",
         category: "12",
 				price: 219,
@@ -1094,7 +1094,7 @@ export class DishesService {
 				consist: "ВИНО БІЛЕ СУХЕ, БРЕНДІ, ЦУКРОВИЙ СИРОП, СИРОП МАРАКУЙЯ"
       },
 			{
-        id: 93,
+        id: 99,
 				title: "БІЛА САНГРІЯ",
         category: "12",
 				price: 219,
@@ -1105,7 +1105,7 @@ export class DishesService {
 				consist: "ВИНО БІЛЕ СУХЕ, БРЕНДІ, ЦУКРОВИЙ СИРОП, СИРОП МАРАКУЙЯ"
       },
 			{
-        id: 94,
+        id: 100,
 				title: "ZANZIBAR",
         category: "12",
 				price: 299,
@@ -1116,7 +1116,7 @@ export class DishesService {
 				consist: "АПЕРОЛЬ, ДЖИН BOMBAY SAPPHIRE, ІГРИСТЕ ВИНО БРЮТ, ТОНІК, СИРОП БУЗИНА, ЛИМОННИЙ ФРЕШ, ГРЕЙПФРУТОВІ СЛАЙСИ"
       },
 			{
-        id: 95,
+        id: 101,
 				title: "ZANZIBAR",
         category: "12",
 				price: 89,
@@ -1127,7 +1127,7 @@ export class DishesService {
 				consist: "ТЕКІЛА СІЛЬВЕР, ЛИМОННИЙ ФРЕШ, БАНАНОВИЙ ЛІКЕР"
       },
 			{
-        id: 96,
+        id: 102,
 				title: "ALICE FROM DALLAS",
         category: "12",
 				price: 99,
@@ -1138,7 +1138,7 @@ export class DishesService {
 				consist: "ТЕКІЛА, ТРІПЛ СЕК, КАВОВИЙ ЛІКЕР"
       },
 			{
-        id: 97,
+        id: 103,
 				title: "Б52",
         category: "12",
 				price: 110,
@@ -1149,7 +1149,7 @@ export class DishesService {
 				consist: "БЕЙЛІЗ, ТРІПЛ СЕК, КАВОВИЙ ЛІКЕР"
       },
 			{
-        id: 98,
+        id: 104,
 				title: "LOVE IS...",
         category: "12",
 				price: 110,
@@ -1160,7 +1160,7 @@ export class DishesService {
 				consist: "ГОРІЛКА, СИРОП БУБЛЬ ГУМ, ЛИМОННИЙ ФРЕШ, АНАНАСОВИЙ СІК"
       },
 			{
-        id: 99,
+        id: 105,
 				title: "МАЛИНОВИЙ ПАЙ",
         category: "12",
 				price: 149,
@@ -1171,7 +1171,7 @@ export class DishesService {
 				consist: "ГОРІЛКА, МАЛИНОВЕ ПЮРЕ, ВЕРШКИ, ПЕЧИВО"
       },
 			{
-        id: 100,
+        id: 106,
 				title: "БАРБАРИСКИ",
         category: "12",
 				price: 149,
@@ -1182,7 +1182,7 @@ export class DishesService {
 				consist: "ГОРІЛКА, СИРОП БАРБАРИС, ЛИМОННИЙ ФРЕШ, АНАНАСОВИЙ СІК, СОДОВА"
       },
 			{
-        id: 101,
+        id: 107,
 				title: "БАРБАРИСКИ",
         category: "12",
 				price: 149,
@@ -1193,7 +1193,7 @@ export class DishesService {
 				consist: "ГОРІЛКА, СИРОП БАРБАРИС, ЛИМОННИЙ ФРЕШ, АНАНАСОВИЙ СІК, СОДОВА"
       },
 			{
-        id: 102,
+        id: 108,
 				title: "POPCORN СОЛОНА КАРАМЕЛЬ",
         category: "12",
 				price: 149,
@@ -1204,7 +1204,7 @@ export class DishesService {
 				consist: "ГОРІЛКА, СИРОП СОЛОНА КАРАМЕЛЬ, СИРОП ПОПКОРН, ЛИМОННИЙ ФРЕШ"
       },
 			{
-        id: 103,
+        id: 109,
 				title: "СТИГЛЕ МАНГО",
         category: "12",
 				price: 149,
@@ -1214,34 +1214,35 @@ export class DishesService {
 				rate: 5,
 				consist: "ГОРІЛКА, ЛИМОННИЙ ФРЕШ, ПЮРЕ МАНГО"
       },
-		]
-      
-    
+		];
+		this.basketArr = [];
 	}
 
 	addToLocalStorage(basket: BasketType) {
 		this.basketSource.next(basket);
 		localStorage.setItem(`${this.basketSource.value.basketId}`, JSON.stringify(basket))
-		console.log("addToLocalStorage", this.basketSource);
+		// console.log("addToLocalStorage", this.basketSource);
 	}
 	removeFromLocalStorage(basket: BasketType): Observable<BasketType> {
 		this.stateSource.next(basket);
-		console.log(this.stateSource);
+		// console.log(this.stateSource);
 		
 		localStorage.removeItem(`${this.stateSource}`)
 		return this.stateSource;
 	}
+
+	deleteLog(basketid: BasketType){
+		localStorage.removeItem(`${basketid}`)
+	}
 	updateBasketLog(basket: BasketType) {
 		this.basketSource.next(basket);
 		localStorage.setItem(`${this.basketSource.value.basketId}`, JSON.stringify(basket))
-		console.log("updateBasketLog", this.basketSource);
+		// console.log("updateBasketLog", this.basketSource);
 	}
 	getBasketLog(basketid) {
-		// console.log("getBasketLog", JSON.parse(localStorage.getItem(`${basketid}`)));
 		return JSON.parse(localStorage.getItem(`${basketid}`));
 	}
 	getAllLocalStorage(){
-		// console.log("getBasketLog", JSON.parse(localStorage.getItem(`${basketid}`)));
 		return localStorage;
 	}
 	getdishes(): Observable<Dish[]> {
@@ -1255,21 +1256,7 @@ export class DishesService {
 	}
 
 	getDishDetailUrl(id: number): Observable<Dish> {
-		// const url = `${this.dishUrl}/${id}`;
 		return  of(this.dishes[id-1]);
 	}
 
-
-
-	addDishToLocalStorage(item: BasketType) {
-		// this.dishes.unshift(log);
-
-		console.log(item);
-		let temp  = JSON.stringify(item)
-		console.log(temp);
-		
-
-		//  add to localstorage 
-		localStorage.setItem(`${item.basketId}`, temp)
-	}
 }

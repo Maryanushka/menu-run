@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DishesService } from '../../services/dishes.service';
+import { BalanceService } from '../../services/balance.service';
 import { Dish, BasketType } from '../../models/Dishes';
 // import { AnyMxRecord } from 'dns';
 // import mixitup from 'mixitup';
@@ -18,6 +19,7 @@ export class DishesComponent implements OnInit {
 	basketId: any;
 	itemid: any;
 	balance: number;
+	originalArr: Dish[];
 	filterText: string;
 	price: number;
 	statusFIlter: boolean = false;
@@ -31,7 +33,8 @@ export class DishesComponent implements OnInit {
 	private balanceTemp: number = 0;
 	private toggle: boolean = false;
 
-  constructor(private DishesService: DishesService) {
+	constructor(private DishesService: DishesService,
+		private BalanceService: BalanceService) {
 
 
 			// this.selectedFilter = this.filters;
@@ -52,41 +55,40 @@ export class DishesComponent implements OnInit {
 			this.loaded = true;
 		});
 	
-		this.getBasketPrice();
+		this.getBalance();
 	}
 
-	getBasketPrice() {
-		this.basketPrice = this.DishesService.getAllLocalStorage();
-
-		if (this.basketPrice.length !== 0 ){
-			for (const key in this.basketPrice) {
-				if (this.basketPrice.hasOwnProperty(key)) {
-					const element = JSON.parse(this.basketPrice[key]);
-					this.balanceTemp += element.price;
-				}
-			}
-
-			return this.balance = this.balanceTemp, this.basketClass = "open";
+	getBalance() {
+		let b = this.BalanceService.getbalance();
+		if (b > 0){
+			return this.balance = b, this.basketClass = "open";
 		}
-		
-		
 	}
 
 
 	
 	addToBasket(item: BasketType){
+		// console.log(item);
+		
 		let getLocalStorageItemId = this.DishesService.getBasketLog(item.id);
-
+		let currentBalance = this.BalanceService.getbalance();
+		// console.log(getLocalStorageItemId, currentBalance);
+		
 		if (getLocalStorageItemId != null && item.id == getLocalStorageItemId.basketId){
 			let arr = this.DishesService.getBasketLog(item.id);
-			console.log(arr);
 
+			// console.log(arr.price, this.dishes[item.id].price);
+			
 			arr.count += 1;
-			arr.price += arr.price;
+			arr.price += this.dishes[item.id].price;
 
-			console.log(arr);
+			currentBalance += arr.price;
+
+			// console.log(currentBalance);
+			
+			this.BalanceService.updatebalance(currentBalance);
 			this.DishesService.updateBasketLog(arr);
-			return this.balance = arr.price, this.basketClass = "open"; 
+			return this.balance = this.BalanceService.getbalance(), this.basketClass = "open"; 
 		}
 		else {
 			let newDish = {
@@ -99,10 +101,19 @@ export class DishesComponent implements OnInit {
 				count: 1
 			}
 
+				if(currentBalance != 0){
+					currentBalance += newDish.price;
+					this.BalanceService.updatebalance(currentBalance);
+				}
+				else{
+					this.BalanceService.updatebalance(newDish.price);
+				}
+
 			this.DishesService.addToLocalStorage(newDish);
-			console.log(newDish.price);
 			
-			return this.balance = newDish.price, this.basketClass = "open" ;
+			// console.log(newDish.price);
+			
+			return this.balance = this.BalanceService.getbalance(), this.basketClass = "open" ;
 		}
 		
 
