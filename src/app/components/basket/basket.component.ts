@@ -56,7 +56,6 @@ export class BasketComponent implements OnInit {
 	}
 
 	increase(item: BasketType){
-		// console.log(item);
 		
 		let getLocalStorageItem = this.DishesService.getBasketLog(item.basketId);
 		let currentBalance = this.BalanceService.getbalance();

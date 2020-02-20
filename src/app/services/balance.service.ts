@@ -10,14 +10,12 @@ export class BalanceService {
 
   updatebalance(balance) {
     localStorage.setItem('balance', JSON.stringify(balance))
-    // console.log("updatebalance", balance);
   }
   getbalance() {
 
     try {
       let b = JSON.parse(localStorage.getItem('balance'))
-      // console.log(b);
-      
+
       if(b !== null){
         return b;
       }
@@ -27,8 +25,6 @@ export class BalanceService {
     }
     catch (error) {
       console.error(error);
-      // expected output: ReferenceError: nonExistentFunction is not defined
-      // Note - error messages will vary depending on browser
     }
   }
 

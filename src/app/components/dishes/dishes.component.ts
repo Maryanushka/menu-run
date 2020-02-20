@@ -68,23 +68,15 @@ export class DishesComponent implements OnInit {
 
 	
 	addToBasket(item: BasketType){
-		// console.log(item);
 		
 		let getLocalStorageItemId = this.DishesService.getBasketLog(item.id);
 		let currentBalance = this.BalanceService.getbalance();
-		// console.log(getLocalStorageItemId, currentBalance);
-		
 		if (getLocalStorageItemId != null && item.id == getLocalStorageItemId.basketId){
 			let arr = this.DishesService.getBasketLog(item.id);
-
-			// console.log(arr.price, this.dishes[item.id].price);
 			
 			arr.count += 1;
 			arr.price += this.dishes[item.id].price;
-
 			currentBalance += arr.price;
-
-			// console.log(currentBalance);
 			
 			this.BalanceService.updatebalance(currentBalance);
 			this.DishesService.updateBasketLog(arr);
@@ -110,8 +102,6 @@ export class DishesComponent implements OnInit {
 				}
 
 			this.DishesService.addToLocalStorage(newDish);
-			
-			// console.log(newDish.price);
 			
 			return this.balance = this.BalanceService.getbalance(), this.basketClass = "open" ;
 		}

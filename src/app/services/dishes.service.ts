@@ -1221,11 +1221,9 @@ export class DishesService {
 	addToLocalStorage(basket: BasketType) {
 		this.basketSource.next(basket);
 		localStorage.setItem(`${this.basketSource.value.basketId}`, JSON.stringify(basket))
-		// console.log("addToLocalStorage", this.basketSource);
 	}
 	removeFromLocalStorage(basket: BasketType): Observable<BasketType> {
 		this.stateSource.next(basket);
-		// console.log(this.stateSource);
 		
 		localStorage.removeItem(`${this.stateSource}`)
 		return this.stateSource;
@@ -1237,7 +1235,6 @@ export class DishesService {
 	updateBasketLog(basket: BasketType) {
 		this.basketSource.next(basket);
 		localStorage.setItem(`${this.basketSource.value.basketId}`, JSON.stringify(basket))
-		// console.log("updateBasketLog", this.basketSource);
 	}
 	getBasketLog(basketid) {
 		return JSON.parse(localStorage.getItem(`${basketid}`));
