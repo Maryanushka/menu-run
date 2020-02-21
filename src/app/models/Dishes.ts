@@ -23,7 +23,8 @@ export interface BasketType{
   title: string;
   price: number;
   count: number; 
-  img: string;
+	img: string;
+	classes?: string;
 }
 
 //  use ? if you want to display property optionally 

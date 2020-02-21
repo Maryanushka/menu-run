@@ -7,16 +7,16 @@
 <main>
 
 	<div class="basket-wrapper">
-		<div class="basket-item"  *ngFor=" let item of items"   [ngClass]="item.status ? 'open' : 'closed'">
+		<div class="basket-item "  *ngFor=" let item of items"   [ngClass]="item.classes">
 			<div class="basket-item-wrapper row">
-				<div class="image col-4" (click)="item.status=!item.status"><img class="img-responsive" src="{{ item.img }}" alt=""></div>
-				<div class="body col-5" (click)="item.status=!item.status">
+				<div class="image col-4" (click)="changeClasses(item)"><img class="img-responsive" src="{{ item.img }}" alt=""></div>
+				<div class="body col-5" (click)="changeClasses(item)">
 					<h6>
 						{{ item.title }}
 					</h6>
 				
 				</div>
-				<div class="nums col-3" (click)="item.status=!item.status">
+				<div class="nums col-3" (click)="changeClasses(item)">
 					<p>{{ item.price }} uah</p>
 					<p>{{ item.count }}</p>
 				</div>
@@ -93,7 +93,7 @@
 				</g>
 			</svg>
 		</button>
-		<button class="order">
+		<button class="order" (click)="order($event)">
 			<p>{{ balance}} uah</p>
 				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px"
 					y="0px" viewBox="0 0 406.834 406.834" style="enable-background:new 0 0 406.834 406.834;" xml:space="preserve">

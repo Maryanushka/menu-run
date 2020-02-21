@@ -17,6 +17,7 @@ export class BasketComponent implements OnInit {
   count: number; 
 	isNew: boolean = true;
 	basket: BasketType[];
+	disable: string = '';
 	itemKeys: any[];
 	items: Array<any> = [];
 	PageTitle = "корзина";
@@ -104,6 +105,29 @@ export class BasketComponent implements OnInit {
 			}
 
 		}
+	}
+
+	changeClasses(item){
+		console.log(item);
+		
+		item.status = !item.status;
+		if (item.status == true){
+			item.classes = "open";
+		}
+		else{
+			item.classes = "closed";
+		}
+	}
+
+
+	order(e){
+		console.log(e);
+		this.items.forEach(el => {
+			el.status = false;
+			el.classes = "blocked";
+			console.log(el);
+			
+		})
 	}
 
 }
