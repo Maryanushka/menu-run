@@ -48,23 +48,23 @@ main {
     margin: 1rem;
     overflow: hidden;
     position: relative;
+    height: 6rem;
     svg{
       position: absolute;
-      right: -8px;
-      width: 30px;
-      height: 30px;
+      right: -7vw;
+      width: 17%;
+      height: 17%;
       fill: #130f40;
       z-index: 3;
       top: 39%;
       animation: svgArrow 1s infinite linear alternate-reverse;
     }
-    filter: drop-shadow(0px 0px 1px #130f40);
     .basket-item-wrapper{
       clip-path: polygon(100% 0, 100% 40%, 98% 50%, 100% 60%, 100% 100%, 0 100%, 0 0);
       background: #fff;
       transition: all .5s linear;
       position: relative;
-
+      height: 100%; 
     }
     h6{
       color:#130f40;
@@ -117,7 +117,6 @@ main {
     }
     .image{
       img{
-        filter: drop-shadow(1px 0px 0px #130f40);
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -197,11 +196,11 @@ main {
   @keyframes svgArrow {
     0%{
       opacity: 0;
-      right: -8px;
+      right: -7vw;
     }
     100%{
       opacity: 1;
-      right: 1px;
+      right: -5vw;
     }
   }
 }
@@ -224,9 +223,7 @@ main {
     border: 1px solid;
     padding: 5px 1rem;
     display: inherit;
-		// margin: 1rem;
 		color: #130f40;
-    // width: 6rem;
     background-color: #fff;
     box-shadow: 0 0 5px 2px #ffffff, -5px 5px 10px #95afc0, 5px -5px 10px #ffffff;
 		height: 4rem;
@@ -262,4 +259,54 @@ main {
 
 		}
 	}
+}
+
+
+.nsm-dialog{
+  top: 30%;
+  .nsm-dialog-btn-close{
+    display: none;
+  }
+  .modal-buttons{
+    button{
+      display: flex;
+      cursor: pointer;
+      justify-content: center;
+      align-items: center;
+      border-radius: 1rem;
+      border: 1px solid;
+      padding: 5px 1rem;
+      display: inherit;
+      color: #130f40;
+      background-color: #fff;
+      box-shadow: 0 0 5px 2px #ffffff, -5px 5px 10px #95afc0, 5px -5px 10px #ffffff;
+      height: 4rem;
+      transition: all .5s linear;
+      &:hover,
+      &:focus,
+      &:active{
+        box-shadow: inset 0 0 10px #9e9e9e;
+        border-color: #fff;
+      }
+      &.yes{
+        color: #6ab04c;
+        display: flex;
+
+        p{
+          display: flex;
+          font-size: 1.8em;
+          margin-right: 1rem;
+        }
+        svg{
+          fill: #6ab04c;
+        }
+      }
+      &.no{
+        color: #f0932b;
+        svg{
+          fill: #f0932b;
+        }
+      }
+    }
+  }
 }

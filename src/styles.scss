@@ -1,6 +1,68 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import "~ngx-smart-modal/ngx-smart-modal";
 html, body{
   background-color: #ecfdff !important;
   height: 100%;
+}
+
+.nsm-dialog{
+  top: 20%;
+  text-align: center;
+  .confirmation-message{
+
+  }
+  .arusure{
+    font-weight: 700;
+    font-size: 1.4rem;
+  }
+  .nsm-dialog-btn-close{
+    display: none;
+  }
+  .modal-buttons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2rem;
+    button{
+      display: flex;
+      cursor: pointer;
+      justify-content: center;
+      align-items: center;
+      border-radius: 1rem;
+      border: 1px solid;
+      padding: 15px 1rem;
+      display: inherit;
+      text-transform: lowercase;
+      color: #130f40;
+      background-color: #fff;
+      box-shadow: 0 0 5px 2px #ffffff, -5px 5px 10px #95afc0, 5px -5px 10px #ffffff;
+      height: auto;
+      transition: all .5s linear;
+      &:hover,
+      &:focus,
+      &:active{
+        box-shadow: inset 0 0 10px #9e9e9e;
+        border-color: #fff;
+      }
+      &.yes{
+        color: #6ab04c;
+        display: flex;
+
+        p{
+          display: flex;
+          font-size: 1.8em;
+          margin-right: 1rem;
+        }
+        svg{
+          fill: #6ab04c;
+        }
+      }
+      &.no{
+        color: #f0932b;
+        svg{
+          fill: #f0932b;
+        }
+      }
+    }
+  }
 }

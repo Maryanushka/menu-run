@@ -11,7 +11,7 @@
 		(click)="filter.selectedFilter = !filter.selectedFilter; onFilterChange(filter);" 
 
 		[ngClass]="filter.selectedFilter ? 'selected' : ''"
-		 attr.data-filter=".{{ filter.value }}">#{{ filter.key }} </li>
+		 attr.data-filter="{{ filter.value }}">#{{ filter.key }} </li>
 	</ul>
 
 </div>
@@ -43,7 +43,7 @@
 						<h6 class="title">{{ item.title }}</h6>
 						
 						<p class="card-text">{{ item.consist }}</p>
-						<p class="price">{{ item.price }} uah</p>
+						<p class="price">{{ item.price }} ₴</p>
 						<i class="fa fa-plus" aria-hidden="true" (click)="addToBasket(item)"></i>
 					</div>
 				</figure>
@@ -54,5 +54,5 @@
 
 	</section>
 
-	<button class="basket_btn {{ basketClass }}" [routerLink]="['/basket']">Корзина	<span>{{ balance }}</span> uah</button>
+	<button class="basket_btn {{ basketClass }}" [routerLink]="['/basket']">Корзина	<span>{{ balance }}</span> ₴</button>
 </main>	

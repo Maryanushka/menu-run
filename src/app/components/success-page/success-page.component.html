@@ -1,0 +1,48 @@
+<main>
+  <h2>Спасибо за заказ !</h2>
+  
+  <p>Чаевые для официанта составят</p>
+
+  <section class="tips">
+    <div class="tips-item" (click)="status=!status" [ngClass]="status ? 'open' : 'hide'">
+      <div class="num">{{ balance * 0.01 | number:'1.0-0' }} ₴</div>
+      <p>1%</p>
+    </div>
+    <div class="tips-item" (click)="status=!status" [ngClass]="status ? 'open' : 'hide'">
+      <div class="num">{{ balance * 0.05 | number:'1.0-0' }} ₴</div>
+      <p>5%</p>
+    </div>
+    <div class="tips-item" (click)="status=!status" [ngClass]="status ? 'open' : 'hide'">
+      <div class="num">{{ balance * 0.1 | number:'1.0-0' }} ₴</div>
+      <p>10%</p>
+    </div>
+  </section>
+  <section class="estimate" style="text-align:center">
+    <h3>Поставьте нам оценку</h3>
+    <div class="rating-wrapper">
+      <fieldset class="rating">
+        <input type="radio" [name]="inputName" value="1" [checked]="rating===1" />
+        <label title="Sucks big time" ></label>
+      
+        <input type="radio" [name]="inputName" value="2" [checked]="rating===2" />
+        <label title="Kinda bad" ></label>
+      
+        <input type="radio" [name]="inputName" value="3" [checked]="rating===3" />
+        <label title="Meh" ></label>
+      
+        <input type="radio" [name]="inputName" value="4" [checked]="rating===4" />
+        <label title="Pretty good" ></label>
+      
+        <input type="radio" [name]="inputName" value="5" [checked]="rating===5" />
+        <label title="Rocks!" ></label>
+      </fieldset>
+    </div>
+  </section>
+  <section class="comment">
+    <h3>С вашей помощью мы становимся лучше</h3>
+    <div class="textarea">
+      <textarea name="comment" id="" cols="30" rows="10"></textarea>
+    </div>
+  </section>
+  <button class="send"> Оплатить {{balance}} ₴</button>
+</main>

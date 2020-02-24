@@ -2,10 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Dish, BasketType } from '../../models/Dishes';
 import { DishesService } from '../../services/dishes.service';
 import { BalanceService } from '../../services/balance.service';
+import { NgxSmartModalService } from "ngx-smart-modal";
+
 @Component({
   selector: 'app-basket',
   templateUrl: './basket.component.html',
-  styleUrls: ['./basket.component.scss']
+	styleUrls: ['./basket.component.scss']
 })
 export class BasketComponent implements OnInit {
   basketId: any;
@@ -21,9 +23,11 @@ export class BasketComponent implements OnInit {
 	itemKeys: any[];
 	items: Array<any> = [];
 	PageTitle = "корзина";
+	isButtonVisible: boolean = false;
 	status: boolean = false;
 
 	constructor(private DishesService: DishesService,
+		public ngxSmartModalService: NgxSmartModalService,
 		private BalanceService: BalanceService) { }
 
   ngOnInit() {
@@ -128,6 +132,8 @@ export class BasketComponent implements OnInit {
 			console.log(el);
 			
 		})
+		this.isButtonVisible = true;
 	}
+
 
 }

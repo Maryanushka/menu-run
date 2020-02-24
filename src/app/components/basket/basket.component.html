@@ -17,7 +17,7 @@
 				
 				</div>
 				<div class="nums col-3" (click)="changeClasses(item)">
-					<p>{{ item.price }} uah</p>
+					<p>{{ item.price }} ₴</p>
 					<p>{{ item.count }}</p>
 				</div>
 				<div class="controls">
@@ -93,8 +93,8 @@
 				</g>
 			</svg>
 		</button>
-		<button class="order" (click)="order($event)">
-			<p>{{ balance}} uah</p>
+		<button *ngIf="!this.isButtonVisible" class="order" (click)="ngxSmartModalService.getModal('confirm-order').open()">
+			<p>{{ balance}} ₴</p>
 				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px"
 					y="0px" viewBox="0 0 406.834 406.834" style="enable-background:new 0 0 406.834 406.834;" xml:space="preserve">
 					<polygon points="385.621,62.507 146.225,301.901 21.213,176.891 0,198.104 146.225,344.327 406.834,83.72 " />
@@ -130,5 +130,19 @@
 					</g>
 				</svg>
 		</button>
+		<button *ngIf="this.isButtonVisible" class="pay" [routerLink]="['/success']">
+			<p>Оплатить {{ balance}} ₴</p>
+		</button>
 	</div>
 </main>
+
+
+<ngx-smart-modal #myModal identifier="confirm-order">
+	<p class="confirmation-message">После подтверждения вы сможете только дозаказать</p>
+	<p class="arusure">уверены ?</p>
+
+	<div class="modal-buttons">
+		<button class="yes" (click)="myModal.close();order($event)">Да</button>
+		<button class="no" (click)="myModal.close()">нет</button>
+	</div>
+</ngx-smart-modal>
