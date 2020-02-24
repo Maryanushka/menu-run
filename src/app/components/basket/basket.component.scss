@@ -223,8 +223,7 @@ main {
     border: 1px solid;
     padding: 5px 1rem;
     display: inherit;
-		color: #130f40;
-    background-color: #fff;
+		color: #fff;
     box-shadow: 0 0 5px 2px #ffffff, -5px 5px 10px #95afc0, 5px -5px 10px #ffffff;
 		height: 4rem;
 		transition: all .5s linear;
@@ -235,28 +234,25 @@ main {
 			border-color: #fff;
 		}
 		&.order{
-      color: #6ab04c;
+      background-color: #6ab04c;
       display: flex;
-
       p{
         display: flex;
         font-size: 1.8em;
         margin-right: 1rem;
       }
-			svg{
-				fill: #6ab04c;
-			}
+		}
+		&.goBack{
+      background-color: #130f40;
+      display: flex;
 		}
 		&.waiter{
-			color: #f0932b;
-			svg{
-				fill: #f0932b;
-			}
+			background-color: #f0932b;
 		}
 		svg{
 			width: 2rem;
-			height: 2rem;
-
+      height: 2rem;
+      fill: #fff;
 		}
 	}
 }

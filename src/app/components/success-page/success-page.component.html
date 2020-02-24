@@ -4,17 +4,10 @@
   <p>Чаевые для официанта составят</p>
 
   <section class="tips">
-    <div class="tips-item" (click)="status=!status" [ngClass]="status ? 'open' : 'hide'">
-      <div class="num">{{ balance * 0.01 | number:'1.0-0' }} ₴</div>
-      <p>1%</p>
-    </div>
-    <div class="tips-item" (click)="status=!status" [ngClass]="status ? 'open' : 'hide'">
-      <div class="num">{{ balance * 0.05 | number:'1.0-0' }} ₴</div>
-      <p>5%</p>
-    </div>
-    <div class="tips-item" (click)="status=!status" [ngClass]="status ? 'open' : 'hide'">
-      <div class="num">{{ balance * 0.1 | number:'1.0-0' }} ₴</div>
-      <p>10%</p>
+    <div class="tips-item" *ngFor="let item of tips | keyvalue" (click)="changeClasses(item)"  [ngClass]="item.value.classes">
+      <p>{{ item.value.title}}</p>
+      <div class="num">{{ item.value.balance | number:'1.0-0' }} ₴</div>
+      
     </div>
   </section>
   <section class="estimate" style="text-align:center">
@@ -44,5 +37,5 @@
       <textarea name="comment" id="" cols="30" rows="10"></textarea>
     </div>
   </section>
-  <button class="send"> Оплатить {{balance}} ₴</button>
+  <button class="send"> Оплатить {{balance | number:'1.0-0'}} ₴</button>
 </main>
