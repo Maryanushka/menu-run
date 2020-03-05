@@ -1,6 +1,8 @@
 import { Component, OnInit, EventEmitter, Input, Output } from "@angular/core";
 import { BalanceService } from '../../services/balance.service';
+import { DishesService } from '../../services/dishes.service';
 import { Tips } from "../../models/TIps";
+import { NgxSmartModalService } from "ngx-smart-modal";
 @Component({
   selector: "app-success-page",
   templateUrl: "./success-page.component.html",
@@ -10,7 +12,9 @@ export class SuccessPageComponent implements OnInit {
   classes: string = "-o";
   tipClasses: string = "unchecked";
   balance: number;
-  constructor(private BalanceService: BalanceService) {}
+	constructor(private BalanceService: BalanceService,
+		public ngxSmartModalService: NgxSmartModalService,
+		private DishesService: DishesService,) {}
   rating: number;
   itemId: number;
   @Output() ratingClick: EventEmitter<any> = new EventEmitter<any>();
@@ -83,5 +87,10 @@ export class SuccessPageComponent implements OnInit {
       item.value.classes = "";
       this.balance = temp
     }
-  }
+	}
+	sendForm(){
+		let ls = this.DishesService.clearLocalStorage();
+		console.log(ls);
+		
+	}
 }

@@ -32,10 +32,19 @@
     </div>
   </section>
   <section class="comment">
-    <h3>С вашей помощью мы становимся лучше</h3>
+    <h3>Вы допомагаєте нам ставати краще!</h3>
     <div class="textarea">
       <textarea name="comment" id="" cols="30" rows="10"></textarea>
     </div>
   </section>
-  <button class="send"> Оплатить {{balance | number:'1.0-0'}} ₴</button>
+  <button class="send" (click)="sendForm();ngxSmartModalService.getModal('success').open()"> Оплатить {{balance | number:'1.0-0'}} ₴</button>
 </main>
+
+<ngx-smart-modal #myModal identifier="success">
+	<h3 class="confirmation-message">Дякую що обрали саме нас!</h3>
+	<p class="emodji">🥰</p>
+
+	<div class="modal-buttons">
+		<button class="home" routerLink="/" (click)="myModal.close()"><i class="fa fa-home" aria-hidden="true"></i></button>
+	</div>
+</ngx-smart-modal>

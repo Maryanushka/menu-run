@@ -1228,6 +1228,10 @@ export class DishesService {
 		localStorage.removeItem(`${this.stateSource}`)
 		return this.stateSource;
 	}
+	clearLocalStorage(){
+		localStorage.clear();
+		return "success"
+	}
 
 	deleteLog(basketid: BasketType){
 		localStorage.removeItem(`${basketid}`)
