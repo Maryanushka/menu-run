@@ -1,8 +1,96 @@
-<a routerLink="/dishes" class="btn btn-light btn-sm mb-3">Back</a>
+<a routerLink="/" class="btn btn-light btn-sm mb-3">Back</a>
 
 <div class="card" *ngIf="dish">
   <div class="card-body">
-    <h5 class="card-title">{{ dish.title }}</h5>
-    <p class="card-text">{{ dish.consist }}</p>
-  </div>
+		<div class="image"><img src="{{dish.img}}" alt="" class="img-responsive"></div>
+    <div class="row justify-content-between">
+			<h5 class="card-title">{{ dish.title }}</h5>
+			<div class="stars" attr.data-rate="{{ dish.rate}}">
+				<span>
+					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+						y="0px" viewBox="0 0 96 96" style="enable-background:new 0 0 96 96;" xml:space="preserve">
+						<g id="XMLID_2_">
+							<path id="XMLID_4_" class="st0" d="M75.5,42.1c0,0.5-0.3,1-0.9,1.6l-12,11.7l2.8,16.5c0,0.2,0,0.4,0,0.7c0,0.5-0.1,0.9-0.3,1.2
+							c-0.2,0.3-0.6,0.5-1,0.5c-0.4,0-0.9-0.1-1.3-0.4L48,66l-14.8,7.8c-0.5,0.3-0.9,0.4-1.3,0.4c-0.5,0-0.8-0.2-1-0.5
+							c-0.2-0.3-0.3-0.7-0.3-1.2c0-0.1,0-0.4,0.1-0.7l2.8-16.5l-12-11.7c-0.6-0.6-0.8-1.1-0.8-1.6c0-0.8,0.6-1.3,1.9-1.5l16.6-2.4l7.4-15
+							c0.4-0.9,1-1.4,1.6-1.4s1.2,0.5,1.6,1.4l7.4,15l16.6,2.4C74.9,40.8,75.5,41.3,75.5,42.1z" />
+						</g>
+					</svg>
+				</span>
+				<span>
+					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+						y="0px" viewBox="0 0 96 96" style="enable-background:new 0 0 96 96;" xml:space="preserve">
+						<g id="XMLID_2_">
+							<path id="XMLID_4_" class="st0" d="M75.5,42.1c0,0.5-0.3,1-0.9,1.6l-12,11.7l2.8,16.5c0,0.2,0,0.4,0,0.7c0,0.5-0.1,0.9-0.3,1.2
+							c-0.2,0.3-0.6,0.5-1,0.5c-0.4,0-0.9-0.1-1.3-0.4L48,66l-14.8,7.8c-0.5,0.3-0.9,0.4-1.3,0.4c-0.5,0-0.8-0.2-1-0.5
+							c-0.2-0.3-0.3-0.7-0.3-1.2c0-0.1,0-0.4,0.1-0.7l2.8-16.5l-12-11.7c-0.6-0.6-0.8-1.1-0.8-1.6c0-0.8,0.6-1.3,1.9-1.5l16.6-2.4l7.4-15
+							c0.4-0.9,1-1.4,1.6-1.4s1.2,0.5,1.6,1.4l7.4,15l16.6,2.4C74.9,40.8,75.5,41.3,75.5,42.1z" />
+						</g>
+					</svg>
+				</span>
+				<span>
+					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+						y="0px" viewBox="0 0 96 96" style="enable-background:new 0 0 96 96;" xml:space="preserve">
+						<g id="XMLID_2_">
+							<path id="XMLID_4_" class="st0" d="M75.5,42.1c0,0.5-0.3,1-0.9,1.6l-12,11.7l2.8,16.5c0,0.2,0,0.4,0,0.7c0,0.5-0.1,0.9-0.3,1.2
+							c-0.2,0.3-0.6,0.5-1,0.5c-0.4,0-0.9-0.1-1.3-0.4L48,66l-14.8,7.8c-0.5,0.3-0.9,0.4-1.3,0.4c-0.5,0-0.8-0.2-1-0.5
+							c-0.2-0.3-0.3-0.7-0.3-1.2c0-0.1,0-0.4,0.1-0.7l2.8-16.5l-12-11.7c-0.6-0.6-0.8-1.1-0.8-1.6c0-0.8,0.6-1.3,1.9-1.5l16.6-2.4l7.4-15
+							c0.4-0.9,1-1.4,1.6-1.4s1.2,0.5,1.6,1.4l7.4,15l16.6,2.4C74.9,40.8,75.5,41.3,75.5,42.1z" />
+						</g>
+					</svg>
+				</span>
+				<span>
+					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+						y="0px" viewBox="0 0 96 96" style="enable-background:new 0 0 96 96;" xml:space="preserve">
+						<g id="XMLID_2_">
+							<path id="XMLID_4_" class="st0" d="M75.5,42.1c0,0.5-0.3,1-0.9,1.6l-12,11.7l2.8,16.5c0,0.2,0,0.4,0,0.7c0,0.5-0.1,0.9-0.3,1.2
+							c-0.2,0.3-0.6,0.5-1,0.5c-0.4,0-0.9-0.1-1.3-0.4L48,66l-14.8,7.8c-0.5,0.3-0.9,0.4-1.3,0.4c-0.5,0-0.8-0.2-1-0.5
+							c-0.2-0.3-0.3-0.7-0.3-1.2c0-0.1,0-0.4,0.1-0.7l2.8-16.5l-12-11.7c-0.6-0.6-0.8-1.1-0.8-1.6c0-0.8,0.6-1.3,1.9-1.5l16.6-2.4l7.4-15
+							c0.4-0.9,1-1.4,1.6-1.4s1.2,0.5,1.6,1.4l7.4,15l16.6,2.4C74.9,40.8,75.5,41.3,75.5,42.1z" />
+						</g>
+					</svg>
+				</span>
+				<span>
+					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+						y="0px" viewBox="0 0 96 96" style="enable-background:new 0 0 96 96;" xml:space="preserve">
+						<g id="XMLID_2_">
+							<path id="XMLID_4_" class="st0" d="M75.5,42.1c0,0.5-0.3,1-0.9,1.6l-12,11.7l2.8,16.5c0,0.2,0,0.4,0,0.7c0,0.5-0.1,0.9-0.3,1.2
+							c-0.2,0.3-0.6,0.5-1,0.5c-0.4,0-0.9-0.1-1.3-0.4L48,66l-14.8,7.8c-0.5,0.3-0.9,0.4-1.3,0.4c-0.5,0-0.8-0.2-1-0.5
+							c-0.2-0.3-0.3-0.7-0.3-1.2c0-0.1,0-0.4,0.1-0.7l2.8-16.5l-12-11.7c-0.6-0.6-0.8-1.1-0.8-1.6c0-0.8,0.6-1.3,1.9-1.5l16.6-2.4l7.4-15
+							c0.4-0.9,1-1.4,1.6-1.4s1.2,0.5,1.6,1.4l7.4,15l16.6,2.4C74.9,40.8,75.5,41.3,75.5,42.1z" />
+						</g>
+					</svg>
+				</span>
+			</div>
+		</div>
+		<p class="card-text">{{ dish.consist }}</p>
+
+		<mat-expansion-panel [expanded]="true" *ngFor="let d of  dish.options | keyvalue" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+				<mat-expansion-panel-header>
+					<mat-panel-title>
+						{{ d.value.title }}
+					</mat-panel-title>
+				</mat-expansion-panel-header>
+				<div *ngIf="d.value.type == 'checkbox'">
+						
+						<ng-container *ngFor="let v of  d.value.values[0] | keyvalue">
+							<ng-container *ngIf="v.value.length == 1">
+								<mat-checkbox matInput value="{{v.value[0].price}}">{{v.value[0].title}}</mat-checkbox>
+								<div class="group" >
+									<span>-</span>
+									<span>{{v.value[0].price}}</span>
+									<span>+</span>
+
+								</div>
+							</ng-container>
+							<ng-container *ngIf="v.value.length != 1">
+								<mat-checkbox matInput value="{{v.value}}">{{v.value}}</mat-checkbox>
+							</ng-container>
+						</ng-container>
+				</div>
+				<mat-radio-group aria-label="Select an option"  *ngIf="d.value.type == 'radio'">
+					<mat-radio-button *ngFor="let v of  d.value.values[0] | keyvalue" matInput value="{{v.value}}">{{v.value}}</mat-radio-button>
+				</mat-radio-group>
+		</mat-expansion-panel>
+	</div>
 </div>

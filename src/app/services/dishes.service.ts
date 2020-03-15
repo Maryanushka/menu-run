@@ -27,15 +27,16 @@ export class DishesService {
 	constructor(private http: HttpClient) { 
 		this.category = [
       {
+				"1"	:	'Сендвiчi',	
 				"2"	:	'Бургери',	
 				"3":	'Закуски',	
 				"4":	'Салати',
 				"5":	'Першi страви',
 				"6":	'Снiданки',	
-				"8"	:	'Кофе и чай',	
-				"9":	'Десерти'	,
-				"11":	'Пиво',	
-				"12":	'Коктейлi',	
+				"8":  'Коктейлi',	
+				"9":	'Пиво'	,
+				"10":	'Десерти',	
+				"11": 'Кофе и чай',	
       }
     ];
 		this.filter = [
@@ -492,7 +493,7 @@ export class DishesService {
 			{
         id: 41,
 				title: "ЧІЗКЕЙК",
-        category: "9",
+        category: "10",
 				price: 85,
 				img: "http://3bc.com.ua/wp-content/uploads/2019/10/десерты.jpg",
 				filters: ['desserts'],
@@ -502,7 +503,7 @@ export class DishesService {
 			{
         id: 42,
 				title: "CHIEF КЕЙК",
-        category: "9",
+        category: "10",
 				price: 85,
 				img: "http://3bc.com.ua/wp-content/uploads/2019/10/десерты.jpg",
 				filters: ['desserts'],
@@ -512,7 +513,7 @@ export class DishesService {
 			{
         id: 43,
 				title: "БРАУНІ З ВИШНЕЮ ТА МОРОЗИВОМ",
-        category: "9",
+        category: "10",
 				price: 95,
 				img: "http://3bc.com.ua/wp-content/uploads/2019/10/десерты.jpg",
 				filters: ['desserts'],
@@ -522,7 +523,7 @@ export class DishesService {
 			{
         id: 44,
 				title: "ЛИМОННИЙ ТАРТ",
-        category: "9",
+        category: "10",
 				price: 89,
 				img: "http://3bc.com.ua/wp-content/uploads/2019/10/десерты.jpg",
 				filters: ['desserts'],
@@ -603,7 +604,7 @@ export class DishesService {
 			{
         id: 52,
 				title: "КРАФТ ТИЖНЯ — ПИВНИЙ ГУРМАН ЗАПИТУЙ У ОФІЦІАНТА",
-        category: "11",
+        category: "9",
 				price: 42,
 				img: "http://3bc.com.ua/wp-content/uploads/2018/02/ilovepdf_com-1-1.jpg",
 				filters: ['beer'],
@@ -614,7 +615,7 @@ export class DishesService {
 			{
         id: 53,
 				title: "ЗОЛОТОЙ ЭЛЬ BY KUMPEL",
-        category: "11",
+        category: "9",
 				price: 62 ,
 				img: "http://3bc.com.ua/wp-content/uploads/2018/02/ilovepdf_com-1-1.jpg",
 				filters: ['ale' , 'beer'],
@@ -624,7 +625,7 @@ export class DishesService {
 			{
         id: 54,
 				title: "KÖLSCH BY BEER BOWL",
-        category: "11",
+        category: "9",
 				price: 54 ,
 				img: "http://3bc.com.ua/wp-content/uploads/2018/02/ilovepdf_com-1-1.jpg",
 				filters: ['ale' , 'beer'],
@@ -634,7 +635,7 @@ export class DishesService {
 			{
         id: 55,
 				title: "HEFEWEISS BY BEER BOWL",
-        category: "11",
+        category: "9",
 				price: 62 ,
 				img: "http://3bc.com.ua/wp-content/uploads/2018/02/ilovepdf_com-1-1.jpg",
 				filters: ['ale' , 'beer'],
@@ -644,7 +645,7 @@ export class DishesService {
 			{
         id: 56,
 				title: "REBREW WHEAT",
-        category: "11",
+        category: "9",
 				price: 62 ,
 				img: "http://3bc.com.ua/wp-content/uploads/2018/02/ilovepdf_com-1-1.jpg",
 				filters: ['ale' , 'beer'],
@@ -654,7 +655,7 @@ export class DishesService {
 			{
         id: 57,
 				title: "L.APA APA FIRST DNIPRO BREWERY",
-        category: "11",
+        category: "9",
 				price: 62 ,
 				img: "http://3bc.com.ua/wp-content/uploads/2018/02/ilovepdf_com-1-1.jpg",
 				filters: ['ale' , 'beer'],
@@ -664,7 +665,7 @@ export class DishesService {
 			{
         id: 58,
 				title: "KRONENBOURG BLANC",
-        category: "11",
+        category: "9",
 				price: 54 ,
 				img: "http://3bc.com.ua/wp-content/uploads/2018/02/ilovepdf_com-1-1.jpg",
 				filters: ['ale' , 'beer'],
@@ -674,7 +675,7 @@ export class DishesService {
 			{
         id: 59,
 				title: "ЛІСОВА ПІСНЯ BY КРАПКА КОМА",
-        category: "11",
+        category: "9",
 				price: 62,
 				img: "http://3bc.com.ua/wp-content/uploads/2018/02/ilovepdf_com-1-1.jpg",
 				filters: ['ale' , 'beer'],
@@ -684,7 +685,7 @@ export class DishesService {
 			{
         id: 60,
 				title: "BARBADOS IPA BY SEVEN BRIDGES",
-        category: "11",
+        category: "9",
 				price: 65,
 				img: "http://3bc.com.ua/wp-content/uploads/2018/02/ilovepdf_com-1-1.jpg",
 				filters: ['ale' , 'beer'],
@@ -694,7 +695,7 @@ export class DishesService {
 			{
         id: 61,
 				title: "КОМЕТА IPA BY VOLTA BREWERY",
-        category: "11",
+        category: "9",
 				price: 62,
 				img: "http://3bc.com.ua/wp-content/uploads/2018/02/ilovepdf_com-1-1.jpg",
 				filters: ['ale' , 'beer'],
@@ -704,7 +705,7 @@ export class DishesService {
 			{
         id: 62,
 				title: "GOLDEN ALE FIRST DNIPRO BREWERY",
-        category: "11",
+        category: "9",
 				price: 62,
 				img: "http://3bc.com.ua/wp-content/uploads/2018/02/ilovepdf_com-1-1.jpg",
 				filters: ['ale' , 'beer'],
@@ -714,7 +715,7 @@ export class DishesService {
 			{
         id: 63,
 				title: "VARVAR BRUT IPA",
-        category: "11",
+        category: "9",
 				price: 75,
 				img: "http://3bc.com.ua/wp-content/uploads/2018/02/ilovepdf_com-1-1.jpg",
 				filters: ['ale' , 'beer'],
@@ -724,7 +725,7 @@ export class DishesService {
 			{
         id: 64,
 				title: "GRIMBERGEN DOUBLE AMBREE",
-        category: "11",
+        category: "9",
 				price: 79,
 				img: "http://3bc.com.ua/wp-content/uploads/2018/02/ilovepdf_com-1-1.jpg",
 				filters: ['ale' , 'beer'],
@@ -734,7 +735,7 @@ export class DishesService {
 			{
         id: 65,
 				title: "STONE RIPPER",
-        category: "11",
+        category: "9",
 				price: 89,
 				img: "http://3bc.com.ua/wp-content/uploads/2018/02/ilovepdf_com-1-1.jpg",
 				filters: ['ale' , 'beer'],
@@ -744,7 +745,7 @@ export class DishesService {
 			{
         id: 66,
 				title: "APPS CIDER",
-        category: "11",
+        category: "9",
 				price: 49,
 				img: "http://3bc.com.ua/wp-content/uploads/2018/02/ilovepdf_com-1-1.jpg",
 				filters: ['sidr' , 'beer'],
@@ -754,7 +755,7 @@ export class DishesService {
 			{
         id: 67,
 				title: "PILSNER FIRST DNIPRO BREWERY",
-        category: "11",
+        category: "9",
 				price: 54,
 				img: "http://3bc.com.ua/wp-content/uploads/2018/02/ilovepdf_com-1-1.jpg",
 				filters: ['lager' , 'beer'],
@@ -764,7 +765,7 @@ export class DishesService {
 			{
         id: 68,
 				title: "CARLSBERG",
-        category: "11",
+        category: "9",
 				price: 49,
 				img: "http://3bc.com.ua/wp-content/uploads/2018/02/ilovepdf_com-1-1.jpg",
 				filters: ['lager' , 'beer'],
@@ -774,7 +775,7 @@ export class DishesService {
 			{
         id: 69,
 				title: "LITOVEL CLASSIC LAGER",
-        category: "11",
+        category: "9",
 				price: 69,
 				img: "http://3bc.com.ua/wp-content/uploads/2018/02/ilovepdf_com-1-1.jpg",
 				filters: ['lager' , 'beer'],
@@ -784,7 +785,7 @@ export class DishesService {
 			{
         id: 70,
 				title: "LITOVEL DARK LAGER",
-        category: "11",
+        category: "9",
 				price: 69,
 				img: "http://3bc.com.ua/wp-content/uploads/2018/02/ilovepdf_com-1-1.jpg",
 				filters: ['lager' , 'beer'],
@@ -794,7 +795,7 @@ export class DishesService {
 			{
         id: 71,
 				title: "WARSTEINER PREMIUM VERUM",
-        category: "11",
+        category: "9",
 				price: 74,
 				img: "http://3bc.com.ua/wp-content/uploads/2018/02/ilovepdf_com-1-1.jpg",
 				filters: ['lager' , 'beer'],
@@ -804,7 +805,7 @@ export class DishesService {
 			{
         id: 72,
 				title: "AMERICAN STOUT BY SEVEN BRIDGES",
-        category: "11",
+        category: "9",
 				price: 62,
 				img: "http://3bc.com.ua/wp-content/uploads/2018/02/ilovepdf_com-1-1.jpg",
 				filters: ['stout' , 'beer'],
@@ -814,7 +815,7 @@ export class DishesService {
 			{
         id: 73,
 				title: "VARVAR MILK STOUT",
-        category: "11",
+        category: "9",
 				price: 69,
 				img: "http://3bc.com.ua/wp-content/uploads/2018/02/ilovepdf_com-1-1.jpg",
 				filters: ['stout' , 'beer'],
@@ -824,7 +825,7 @@ export class DishesService {
 			{
         id: 74,
 				title: "CAPTAIN SALT",
-        category: "11",
+        category: "9",
 				price: 29,
 				img: "http://3bc.com.ua/wp-content/uploads/2018/02/ilovepdf_com-1-1.jpg",
 				filters: ['sour' , 'beer'],
@@ -834,7 +835,7 @@ export class DishesService {
 			{
         id: 75,
 				title: "6 ВИДІВ УКРАЇНСЬКОГО КРАФТОВОГО ПИВА НА ВИБІР",
-        category: "11",
+        category: "9",
 				price: 99,
 				img: "http://3bc.com.ua/wp-content/uploads/2018/02/ilovepdf_com-1-1.jpg",
 				filters: ['ukrainian' , 'beer'],
@@ -844,7 +845,7 @@ export class DishesService {
 			{
         id: 76,
 				title: "6 ВИДІВ ІНОЗЕМНОГО КРАФТОВОГО ПИВА НА ВИБІР",
-        category: "11",
+        category: "9",
 				price: 129,
 				img: "http://3bc.com.ua/wp-content/uploads/2018/02/ilovepdf_com-1-1.jpg",
 				filters: ['foreign' , 'beer'],
@@ -854,7 +855,7 @@ export class DishesService {
 			{
         id: 77,
 				title: "MARTINI FIERO & TONIC",
-        category: "12",
+        category: "8",
 				price: 155,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails'],
@@ -865,7 +866,7 @@ export class DishesService {
 			{
         id: 78,
 				title: "ITALY SPRITZ",
-        category: "12",
+        category: "8",
 				price: 155,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails'],
@@ -876,7 +877,7 @@ export class DishesService {
 			{
         id: 79,
 				title: "CORONA CHERRY BOURBON",
-        category: "12",
+        category: "8",
 				price: 155,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails'],
@@ -887,7 +888,7 @@ export class DishesService {
 			{
         id: 80,
 				title: "CORONA GREEN TEA CUCUMBER",
-        category: "12",
+        category: "8",
 				price: 155,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails'],
@@ -898,7 +899,7 @@ export class DishesService {
 			{
         id: 81,
 				title: "CORONA SUNSETS",
-        category: "12",
+        category: "8",
 				price: 155,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails'],
@@ -909,7 +910,7 @@ export class DishesService {
 			{
         id: 82,
 				title: "CORONA JÄGERMEISTER",
-        category: "12",
+        category: "8",
 				price: 155,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails'],
@@ -920,7 +921,7 @@ export class DishesService {
 			{
         id: 83,
 				title: "PEACH SPRITZ",
-        category: "12",
+        category: "8",
 				price: 129,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails'],
@@ -931,7 +932,7 @@ export class DishesService {
 			{
         id: 84,
 				title: "SPRITZ FOR HER",
-        category: "12",
+        category: "8",
 				price: 129,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails'],
@@ -942,7 +943,7 @@ export class DishesService {
 			{
         id: 85,
 				title: "NON ALC WARSTEINER GRAPEFRUIT",
-        category: "12",
+        category: "8",
 				price: 155,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails', 'none-alcohol'],
@@ -953,7 +954,7 @@ export class DishesService {
 			{
         id: 86,
 				title: "APEROL SPRITZ",
-        category: "12",
+        category: "8",
 				price: 125,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails'],
@@ -964,7 +965,7 @@ export class DishesService {
 			{
         id: 87,
 				title: "LAWSON’S COLA",
-        category: "12",
+        category: "8",
 				price: 115,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails'],
@@ -975,7 +976,7 @@ export class DishesService {
 			{
         id: 88,
 				title: "RAPASKA",
-        category: "12",
+        category: "8",
 				price: 119,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails'],
@@ -986,7 +987,7 @@ export class DishesService {
 			{
         id: 89,
 				title: "OLDFASION DE MARSEILLE",
-        category: "12",
+        category: "8",
 				price: 135,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails'],
@@ -997,7 +998,7 @@ export class DishesService {
 			{
         id: 90,
 				title: "BACARDI CUBA LIBRE",
-        category: "12",
+        category: "8",
 				price: 115,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails'],
@@ -1008,7 +1009,7 @@ export class DishesService {
 			{
         id: 91,
 				title: "MARTINI & TONIC",
-        category: "12",
+        category: "8",
 				price: 115,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails'],
@@ -1019,7 +1020,7 @@ export class DishesService {
 			{
         id: 92,
 				title: "BACARDI MOJITO",
-        category: "12",
+        category: "8",
 				price: 115,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails'],
@@ -1030,7 +1031,7 @@ export class DishesService {
 			{
         id: 93,
 				title: "BLOODY MARY",
-        category: "12",
+        category: "8",
 				price: 119,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails'],
@@ -1041,7 +1042,7 @@ export class DishesService {
 			{
         id: 94,
 				title: "LADY KILLER",
-        category: "12",
+        category: "8",
 				price: 129,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails'],
@@ -1052,7 +1053,7 @@ export class DishesService {
 			{
         id: 95,
 				title: "APEROL SOUR",
-        category: "12",
+        category: "8",
 				price: 119,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails'],
@@ -1063,7 +1064,7 @@ export class DishesService {
 			{
         id: 96,
 				title: "DEWAR’S & TONIC",
-        category: "12",
+        category: "8",
 				price: 115,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails'],
@@ -1074,7 +1075,7 @@ export class DishesService {
 			{
         id: 97,
 				title: "BARBARIZE",
-        category: "12",
+        category: "8",
 				price: 125,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails'],
@@ -1085,7 +1086,7 @@ export class DishesService {
 			{
         id: 98,
 				title: "БІЛА САНГРІЯ",
-        category: "12",
+        category: "8",
 				price: 219,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails', 'big-coctails'],
@@ -1096,7 +1097,7 @@ export class DishesService {
 			{
         id: 99,
 				title: "БІЛА САНГРІЯ",
-        category: "12",
+        category: "8",
 				price: 219,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails', 'big-coctails'],
@@ -1107,7 +1108,7 @@ export class DishesService {
 			{
         id: 100,
 				title: "ZANZIBAR",
-        category: "12",
+        category: "8",
 				price: 299,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails', 'big-coctails'],
@@ -1118,7 +1119,7 @@ export class DishesService {
 			{
         id: 101,
 				title: "ZANZIBAR",
-        category: "12",
+        category: "8",
 				price: 89,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails', 'shot'],
@@ -1129,7 +1130,7 @@ export class DishesService {
 			{
         id: 102,
 				title: "ALICE FROM DALLAS",
-        category: "12",
+        category: "8",
 				price: 99,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails', 'shot'],
@@ -1140,7 +1141,7 @@ export class DishesService {
 			{
         id: 103,
 				title: "Б52",
-        category: "12",
+        category: "8",
 				price: 110,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails', 'shot'],
@@ -1151,7 +1152,7 @@ export class DishesService {
 			{
         id: 104,
 				title: "LOVE IS...",
-        category: "12",
+        category: "8",
 				price: 110,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails', 'coctails-set'],
@@ -1162,7 +1163,7 @@ export class DishesService {
 			{
         id: 105,
 				title: "МАЛИНОВИЙ ПАЙ",
-        category: "12",
+        category: "8",
 				price: 149,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails', 'coctails-set'],
@@ -1173,7 +1174,7 @@ export class DishesService {
 			{
         id: 106,
 				title: "БАРБАРИСКИ",
-        category: "12",
+        category: "8",
 				price: 149,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails', 'coctails-set'],
@@ -1184,7 +1185,7 @@ export class DishesService {
 			{
         id: 107,
 				title: "БАРБАРИСКИ",
-        category: "12",
+        category: "8",
 				price: 149,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails', 'coctails-set'],
@@ -1195,7 +1196,7 @@ export class DishesService {
 			{
         id: 108,
 				title: "POPCORN СОЛОНА КАРАМЕЛЬ",
-        category: "12",
+        category: "8",
 				price: 149,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails', 'coctails-set'],
@@ -1206,14 +1207,127 @@ export class DishesService {
 			{
         id: 109,
 				title: "СТИГЛЕ МАНГО",
-        category: "12",
+        category: "8",
 				price: 149,
 				img: "http://3bc.com.ua/wp-content/uploads/2017/12/photo_2018-03-21_16-30-04.jpg",
 				filters: ['coctails', 'coctails-set'],
 				weight: "5*50 ml",
 				rate: 5,
 				consist: "ГОРІЛКА, ЛИМОННИЙ ФРЕШ, ПЮРЕ МАНГО"
-      },
+			},
+			{
+				id: 110,
+				title: "Трилайн",
+				category: "1",
+				price: 0,
+				img: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/190322-ham-sandwich-horizontal-1553721016.png",
+				filters: ['sandwich'],
+				weight: "400g",
+				rate: 5,
+				consist: "Збери свiй сендвiч",
+				options: [
+					{
+						"type": "radio", 
+						"title": "Хлiб", 
+						"values": [{
+								"1": "багет", 
+								"2": "чiабатта",
+							}]
+					},
+					{
+						"type": "radio", 
+						"title": "Основа", 
+						"values": [{
+								"1": "бiла", 
+								"2": "чорна", 
+							}]
+					},
+					{
+						"type": "checkbox", 
+						"title": "Намазка", 
+						"max" : "2",
+						"values": [{
+							"1":"плавлений сир1",
+							"2":"плавлений сир2",
+							"3":"масло",
+							"4":"iталiйська",
+							"5":"паприка",
+						}]
+					},
+					{
+						"type": "checkbox", 
+						"title": "Сир", 
+						"max": "3",
+						"values": [{
+							"1": "королiвський",
+							"2": "фета",
+							"3": "голландський",
+							"4": "копчений",
+						}]
+					},
+					{
+						"type": "checkbox", 
+						"title": "М'ясо/риба", 
+						"max": "3",
+						"values": [{
+							"1": "шинка",
+							"2": "балик",
+							"3": "курка",
+							"4": "говядина",
+							"5": "лосось",
+							"6": "тунец",
+							"7": "фалафель",
+						}]
+					},
+					{
+						"type": "checkbox", 
+						"title": "Овочi", 
+						"max": "3",
+						"values": [{
+							"1": "морква по корейськи",
+							"2": "лук",
+							"3": "кукурудза",
+							"4": "гриби шампiньйоны",
+							"5": "гриби вешанки",
+							"6": "огiрок солоний",
+							"7": "огiрок свiжий",
+							"8": "салат",
+							"9": "спаржа",
+							"10": "шпинат",
+							"11": "помiдор",
+							"12": "кроп",
+						}]
+					},
+					{
+						"type": "checkbox", 
+						"title": "Соус", 
+						"max": "3",
+						"values": [{
+							"1": "фiрмовий",
+							"2": "гiрчиця",
+							"3": "кетчуп",
+							"4": "соус1",
+							"5": "соус2",
+							"6": "соус3",
+						}]
+					},
+					{
+						"type": "checkbox", 
+						"title": "Iнше", 
+						"max": "3",
+						"values": [{
+							"1": [{
+								"title":"Насiння гарбуза",
+								"price": 10,
+							}],
+							"2": [{
+								"title": "Насiння кунжуту",
+								"price": 15,
+							}],
+						}]
+					},
+				]
+			},
 		];
 		this.basketArr = [];
 	}

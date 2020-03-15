@@ -14,8 +14,12 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { NgxSmartModalModule } from "ngx-smart-modal";
 import { SuccessPageComponent } from './components/success-page/success-page.component';
 import { RatingModule } from "ng-starrating";
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +36,13 @@ import { RatingModule } from "ng-starrating";
     FormsModule,
     HttpClientModule,
     RatingModule,
-    NgxSmartModalModule.forChild()
+    NgxSmartModalModule.forChild(),
+		BrowserAnimationsModule,
+		MatRadioModule,
+		MatCheckboxModule,
+		MatExpansionModule,
+		MatFormFieldModule,
+		MatInputModule
   ],
   providers: [DishesService, BalanceService],
   bootstrap: [AppComponent]

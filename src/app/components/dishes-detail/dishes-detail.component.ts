@@ -10,7 +10,7 @@ import { Dish } from '../../models/Dishes';
 })
 export class DishesDetailComponent implements OnInit {
   dish: Dish;
-
+	panelOpenState: boolean = true;
   constructor(private route: ActivatedRoute, private dishesService: DishesService) { }
 
   ngOnInit() {

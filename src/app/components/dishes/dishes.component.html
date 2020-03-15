@@ -32,19 +32,25 @@
 				<figure *ngIf="cat.key === item.category" attr.data-filteritem="{{item.filters}}">
 					<div *ngIf="item.options !=  undefined">
 						<a routerLink="/dishes/{{item.id}}">
-							<h4 class="title">{{ item.title }}</h4>
 							<img class="img-responsive" src="{{ item.img }}" alt="">
-							<p class="card-text">{{ item.consist }}</p>
-							<i data-price="item.price" class="fa fa-plus" aria-hidden="true"></i>
+							<div class="item-container">
+								<h6 class="title">{{ item.title }}</h6>
+								<p class="card-text">{{ item.consist }}</p>
+								<p class="price">{{ item.price }} ₴</p>
+								<i class="fa fa-plus" aria-hidden="true"></i>
+							</div>
+						
 						</a>
 					</div>
-					<img class="img-responsive" src="{{ item.img }}" alt="">
-					<div class="item-container">
-						<h6 class="title">{{ item.title }}</h6>
+					<div *ngIf="item.options ==  undefined">
+						<img class="img-responsive" src="{{ item.img }}" alt="">
+						<div class="item-container">
+							<h6 class="title">{{ item.title }}</h6>
 						
-						<p class="card-text">{{ item.consist }}</p>
-						<p class="price">{{ item.price }} ₴</p>
-						<i class="fa fa-plus" aria-hidden="true" (click)="addToBasket(item)"></i>
+							<p class="card-text">{{ item.consist }}</p>
+							<p class="price">{{ item.price }} ₴</p>
+							<i class="fa fa-plus" aria-hidden="true" (click)="addToBasket(item)"></i>
+						</div>
 					</div>
 				</figure>
 
