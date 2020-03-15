@@ -27,34 +27,36 @@
 		</header>
 		<div class="wrapper">
 			
-			<div class="item-wrapper" *ngFor="let item of dishes">
+			<ng-container  *ngFor="let item of dishes">
+				<div class="item-wrapper" *ngIf="cat.key === item.category">
 				
-				<figure *ngIf="cat.key === item.category" attr.data-filteritem="{{item.filters}}">
-					<div *ngIf="item.options !=  undefined">
-						<a routerLink="/dishes/{{item.id}}">
+					<figure  attr.data-filteritem="{{item.filters}}">
+						<div *ngIf="item.options !=  undefined">
+							<a routerLink="/dishes/{{item.id}}">
+								<img class="img-responsive" src="{{ item.img }}" alt="">
+								<div class="item-container">
+									<h6 class="title">{{ item.title }}</h6>
+									<p class="card-text">{{ item.consist }}</p>
+									<p class="price">{{ item.price }} ₴</p>
+									<i class="fa fa-plus" aria-hidden="true"></i>
+								</div>
+				
+							</a>
+						</div>
+						<div *ngIf="item.options ==  undefined">
 							<img class="img-responsive" src="{{ item.img }}" alt="">
 							<div class="item-container">
 								<h6 class="title">{{ item.title }}</h6>
+				
 								<p class="card-text">{{ item.consist }}</p>
 								<p class="price">{{ item.price }} ₴</p>
-								<i class="fa fa-plus" aria-hidden="true"></i>
+								<i class="fa fa-plus" aria-hidden="true" (click)="addToBasket(item)"></i>
 							</div>
-						
-						</a>
-					</div>
-					<div *ngIf="item.options ==  undefined">
-						<img class="img-responsive" src="{{ item.img }}" alt="">
-						<div class="item-container">
-							<h6 class="title">{{ item.title }}</h6>
-						
-							<p class="card-text">{{ item.consist }}</p>
-							<p class="price">{{ item.price }} ₴</p>
-							<i class="fa fa-plus" aria-hidden="true" (click)="addToBasket(item)"></i>
 						</div>
-					</div>
-				</figure>
-
-			</div>
+					</figure>
+				
+				</div>
+			</ng-container>
 				
 		</div>
 
