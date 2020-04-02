@@ -42,8 +42,9 @@ export class DishesService {
 		this.filter = [
       {
 				'Все' : "all",	
-				'Бургери' :"buger",	
-				'Закуски' :"cnaks",	
+				'Сендвiчi': "sandwich",	
+				'Бургери' :"burger",	
+				'Закуски' :"snaks",	
 				'Салати': "salads",
 				'Першi страви':"dinner",
 				'Снiданки':"breakfast",	

@@ -8,7 +8,7 @@
 	</div>
 	<ul >
 		<li *ngFor="let filter of filters[0] | keyvalue" 
-		(click)="filter.selectedFilter = !filter.selectedFilter; onFilterChange(filter);" 
+		(click)="filter.selectedFilter = !filter.selectedFilter; onFilterChange(filter, filter.selectedFilter);" 
 
 		[ngClass]="filter.selectedFilter ? 'selected' : ''"
 		 attr.data-filter="{{ filter.value }}">#{{ filter.key }} </li>
@@ -30,7 +30,7 @@
 			<ng-container  *ngFor="let item of dishes">
 				<div class="item-wrapper" *ngIf="cat.key === item.category">
 				
-					<figure  attr.data-filteritem="{{item.filters}}">
+					<figure class="{{ item.classes }}"  attr.data-filteritem="{{item.filters}}">
 						<div *ngIf="item.options !=  undefined">
 							<a routerLink="/dishes/{{item.id}}">
 								<img class="img-responsive" src="{{ item.img }}" alt="">

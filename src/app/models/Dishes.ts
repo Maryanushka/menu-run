@@ -11,7 +11,8 @@ export interface Dish {
   description?: string;
   bonusOption?: string;
   consist?: string;
-  options?: any;
+	options?: any;
+	classes?: string;
   // hase?: boolean,
   // registered?: any,
   // hide?: boolean

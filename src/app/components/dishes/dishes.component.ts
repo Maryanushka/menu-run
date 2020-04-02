@@ -30,6 +30,10 @@ export class DishesComponent implements OnInit {
 	basketClass: string;
 	count: number = 0;
 	basketPrice: any;
+	failArr: Dish[] = [];
+	successArr: Dish[] = [];
+	dArray: [];
+	selectedFilterArr = [];
 	private balanceTemp: number = 0;
 	private toggle: boolean = false;
 
@@ -56,6 +60,100 @@ export class DishesComponent implements OnInit {
 		});
 	
 		this.getBalance();
+	}
+	
+
+
+	onFilterChange(filter, d){
+		let arr = this.dishes;
+		let tempArr= [];
+		if(d){
+			this.selectedFilterArr.push(filter.value);
+			this.filterCheck(this.selectedFilterArr);
+		}
+		else if(!d){
+			this.selectedFilterArr.forEach(el => {
+				if(el != filter.value){
+					tempArr.push(el);
+				}
+			});
+			this.selectedFilterArr = tempArr;
+			console.log(this.selectedFilterArr);
+			
+			if(this.selectedFilterArr.length > 0){
+				this.filterDelete(this.selectedFilterArr);
+			}
+			else {
+				this.dishes.forEach( el => {
+					el.classes = "";
+				})
+				this.successArr = [];
+			}
+			
+		}
+		
+		return this.selectedFilterArr;
+	}
+
+	filterDelete(arr){
+		let temSuccessArr = this.successArr;
+		let tempArr = [];
+		let tempDishes = this.dishes;
+		arr.forEach((selectedFilterItem) => {
+			console.log(selectedFilterItem);
+			temSuccessArr.forEach((t, i) => {
+				t.filters.forEach(f => {
+					if (f == selectedFilterItem) {
+						console.log(t);
+						tempArr.push(t);
+					}
+				})
+			})
+		})
+
+		this.successArr = tempArr;
+		this.applyShowClass(this.successArr);
+		tempDishes = tempDishes.filter(item => !this.successArr.includes(item));
+		console.log(this.successArr, tempDishes);
+		this.applyHideClass(tempDishes);
+
+	}
+	filterCheck (arr){
+		let temparr = this.dishes;
+		console.log(temparr.length);
+		
+		arr.forEach( (selectedFilterItem) => {
+			console.log(selectedFilterItem);
+			temparr.forEach( (t, i) => {
+				t.filters.forEach( f => {
+					if(f == selectedFilterItem){
+						this.successArr.push(t);
+						// temparr.splice(i ,1 );
+					}
+				})
+			})
+		})
+		
+		this.applyShowClass(this.successArr);
+		temparr = temparr.filter(item => !this.successArr.includes(item));
+		console.log(this.successArr, temparr);
+		this.applyHideClass(temparr);
+		
+	}
+	applyHideClass(arr){
+		arr.forEach(el => { 
+			// console.log(el, el.classes);
+			
+			el.classes = "hide"
+			console.log(el, el.classes);
+		})
+	}
+	applyShowClass(arr){
+		arr.forEach(el => { 
+			// console.log(el, el.classes);
+			el.classes = "show";
+			console.log(el, el.classes);
+		})
 	}
 
 	getBalance() {
