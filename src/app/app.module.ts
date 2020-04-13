@@ -20,6 +20,12 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +48,9 @@ import { MatInputModule } from '@angular/material/input';
 		MatCheckboxModule,
 		MatExpansionModule,
 		MatFormFieldModule,
-		MatInputModule
+		MatInputModule,
+		StoreModule.forRoot({}, {}),
+		StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [DishesService, BalanceService],
   bootstrap: [AppComponent]

@@ -54,10 +54,10 @@ export class DishesComponent implements OnInit {
 			this.category = category;
 			this.loaded = true;
 		});
-		this.DishesService.getFilters().subscribe(filters => {
-			this.filters = filters;
-			this.loaded = true;
-		});
+		// this.DishesService.getFilters().subscribe(filters => {
+		// 	this.filters = filters;
+		// 	this.loaded = true;
+		// });
 	
 		this.getBalance();
 	}
