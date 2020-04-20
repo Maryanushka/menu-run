@@ -98,9 +98,9 @@ export class DishesService {
 	// getdishes(): Observable<Dish[]> {
 	// 	return of(this.dishes);
 	// }
-	// getFilters(): Observable<Dish[]> {
-	// 	return of(this.filter);
-	// }
+	getFilters(): Observable<Dish[]> {
+		return of(this.filter);
+	}
 	getcategories(): Observable<Category[]> {
 		return of(this.category);
 	}

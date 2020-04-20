@@ -34,9 +34,9 @@ export class BasketComponent implements OnInit {
 
 		this.getItems();
 
-		this.DishesService.getdishes().subscribe(dishes => {
-			this.originalArr = dishes;
-		});
+		// this.DishesService.getdishes().subscribe(dishes => {
+		// 	this.originalArr = dishes;
+		// });
 
 		this.getBalance();
 	}

@@ -1159,7 +1159,7 @@ const initialState: Array<Dish> = [
 			title: "Трилайн",
 			category: "1",
 			price: 0,
-			img: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/190322-ham-sandwich-horizontal-1553721016.png",
+			img: "https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2013/05/egg-cress-club-sandwich_0.jpg",
 			filters: ['sandwich'],
 			weight: "400g",
 			rate: 5,
@@ -1271,9 +1271,15 @@ const initialState: Array<Dish> = [
 
 export function ShoppingReducer(state: Array<Dish> = initialState, action: DishAction) {
 	switch (action.type) {
-		case DishActionTypes.ADD_ITEM:
-			return [...state, action.payload];
+		case DishActionTypes.DELETE_FILTER_ITEM:
+			return initialState;
+		case DishActionTypes.FILTER_ONE_ITEM: 
+			return state.filter(item => item.filters.includes(action.payload))
+		case DishActionTypes.FILTER_MULTIPLE_ITEM: 
+			let temparr = state.filter(item => item.filters.includes(action.payload))
+			return [...state, temparr]
+
 		default:
-			return state;
+			return initialState;
 	}
 }

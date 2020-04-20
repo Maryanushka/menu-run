@@ -23,6 +23,7 @@ import { MatInputModule } from '@angular/material/input';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { ShoppingReducer } from './reducers/app.reducer';
 
 
 
@@ -49,7 +50,9 @@ import { environment } from '../environments/environment';
 		MatExpansionModule,
 		MatFormFieldModule,
 		MatInputModule,
-		StoreModule.forRoot({}, {}),
+		StoreModule.forRoot({
+			shopping: ShoppingReducer
+		}),
 		StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [DishesService, BalanceService],

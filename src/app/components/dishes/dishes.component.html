@@ -8,7 +8,7 @@
 	</div>
 	<ul >
 		<li *ngFor="let filter of filters[0] | keyvalue" 
-		(click)="filter.selectedFilter = !filter.selectedFilter; onFilterChange(filter, filter.selectedFilter);" 
+		(click)="onFilterChange(filter);" 
 
 		[ngClass]="filter.selectedFilter ? 'selected' : ''"
 		 attr.data-filter="{{ filter.value }}">#{{ filter.key }} </li>
@@ -27,7 +27,7 @@
 		</header>
 		<div class="wrapper">
 			
-			<ng-container  *ngFor="let item of dishes">
+			<ng-container  *ngFor="let item of dishes | async">
 				<div class="item-wrapper" *ngIf="cat.key === item.category">
 				
 					<figure class="{{ item.classes }}"  attr.data-filteritem="{{item.filters}}">
@@ -61,6 +61,7 @@
 		</div>
 
 	</section>
+
 
 	<button class="basket_btn {{ basketClass }}" [routerLink]="['/basket']">Корзина	<span>{{ balance }}</span> ₴</button>
 </main>	
